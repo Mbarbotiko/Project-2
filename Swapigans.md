@@ -1,4 +1,23 @@
 ### Requirements
+STEPHEN:
+API's
+
+KATE:
+FRONT END
+JQUERY
+DONT FORGET POWERFUL PEOPLE FOOTER & MODAL!
+
+AL:
+JQUERY
+HALP WHEN NEEDED
+
+MARGARITA:
+API ROUTING
+DB
+MODEL
+
+
+
 
 Your project must:
 
@@ -42,6 +61,7 @@ INDEX
 /lunch
 /spouse
 /shwuh
+/confirm
 
 
 MODELS
