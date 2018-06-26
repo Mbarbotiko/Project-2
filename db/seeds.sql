@@ -1,6 +1,6 @@
--- USE swaps_db;
+USE swaps_db;
 
--- CREATE TABLE user_table
+-- CREATE TABLE users
 -- (
 
 -- id int NOT NULL AUTO_INCREMENT,
@@ -9,7 +9,7 @@
 -- 	PRIMARY KEY (id)
 -- );
 
--- CREATE TABLE item_table
+-- CREATE TABLE items
 -- (
 
 -- id int NOT NULL AUTO_INCREMENT,
@@ -18,30 +18,22 @@
 -- 	picture varchar(1000) NOT NULL,
 -- 	category varchar(50) NOT NULL,
 -- 	PRIMARY KEY (id),
--- 	FOREIGN KEY (id) REFERENCES user_table(id)
+-- 	FOREIGN KEY (id) REFERENCES User(id)
 
 
--- );
+-- ); You will not use the above ^ when sequelize runs on server it should create tables automatically, seeds will need to be inserted after which are below:
 
 
--- ALTER TABLE user_table
--- MODIFY COLUMN phone varchar(15);
+USE swaps_db;
 
 
--- select * from user_table;
+INSERT INTO users (name, phone, createdAt, updatedAt)
+VALUES ('Margarita', '16516001396', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
+
+INSERT INTO users (name, phone, createdAt, updatedAt)
+VALUES ('Stephen', '19525640504', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
 
 
--- INSERT INTO user_table (name, phone)
--- VALUES ('Margarita', '16516001396');
+INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Old Boot', 'Spectacular Vintage BOOT!', 'https://www.blueribbonpet.com/wp-content/uploads/EE-1733.jpg', 'Apparel', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 1 );
 
--- INSERT INTO user_table (name, phone)
--- VALUES ('Stephen', '19525640504');
-
-
-
-
-
--- INSERT INTO item_table (item, description, picture, category) VALUES ('Old Boot', 'Spectacular Vintage BOOT!', 'https://www.blueribbonpet.com/wp-content/uploads/EE-1733.jpg', 'Apparel'  );
-
--- INSERT INTO item_table (item, description, picture, category) VALUES ('Half Eaten Apple', 'Almost a meal!', 'https://thumbs.dreamstime.com/b/half-eaten-apple-isolated-white-background-39418691.jpg', 'Lunch'  );
-
+INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Half Eaten Apple', 'Almost a meal!', 'https://thumbs.dreamstime.com/b/half-eaten-apple-isolated-white-background-39418691.jpg', 'Lunch', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 2);
