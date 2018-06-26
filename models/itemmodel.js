@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    Item.associate = function (models) {
+    Item.associate = function(models) {
         Item.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
@@ -34,7 +34,6 @@ module.exports = function (sequelize, DataTypes) {
     };
 
     return Item;
-    console.log(Item);
 
 };
 

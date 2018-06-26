@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 // Routes
 // 
-// require("./routes/html-routes.js")(app);
-// require("./routes/user-api-routes.js")(app);
-// require("./routes/item-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/user-api.js")(app);
+require("./routes/item-api.js")(app);
 
 db.sequelize.sync().then(function () {
     //{ force: true } pass into sync if you want DB to be dropped when server is initialized.
