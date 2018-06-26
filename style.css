@@ -1,10 +1,10 @@
 
-h1 {
+.brand-logo {
 font-family: 'Cabin Sketch', cursive;
 
 };
 
-nav {
+.nav-wrapper {
     background-color: #558b2f,
 
 };
@@ -13,6 +13,14 @@ nav {
     width: 100px;
     height: 75px;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+   
 
 .page-footer {
     background-color: #2f4f4f;

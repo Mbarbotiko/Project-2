@@ -11,24 +11,41 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>SWAPIGANS</title>
 </head>
 <body>
-    <header class="no-padding light-green darken-2">
-<h1 class="center-align">SWAPIGANS</h1>   
-  <nav>
-        <div class="nav-wrapper light-green darken-3">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
+  <header>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper light-green">
+          <a href="#!" class="brand-logo center-align">SWAPIGANS</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="something.html">Stuff</a></li>
+            <li><a href="things.html">Things</a></li>
+            <!-- Dropdown Trigger  this needs some jQ shit  $(".dropdown-trigger").dropdown();-->
+            
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right"></i></a></li>
+          </ul>
         </div>
+        <!-- <div class="nav-wrapper light-green darken-3">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div> -->
       </nav>
-    </header>
+       
+    </header> 
     <div class="content">
       
   <div class="row">
@@ -72,7 +89,7 @@
       <div class="footer-copyright">
         <div class="container">
         © 2018 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+       
         </div>
       </div>
     </footer>
