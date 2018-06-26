@@ -21,3 +21,5 @@ module.exports = function (app) {
         });
     });
 }
+
+//use .catch to capture errors at the end of the post function
