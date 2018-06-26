@@ -1,10 +1,19 @@
 
 h1 {
 font-family: 'Cabin Sketch', cursive;
-text-align: center;
+
 };
 
 nav {
     background-color: #558b2f,
-    color: #f3e5f5
+
 };
+
+.btn-floating {
+    width: 100px;
+    height: 75px;
+}
+
+.page-footer {
+    background-color: #2f4f4f;
+}
