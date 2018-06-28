@@ -1,9 +1,6 @@
 
 USE swaps_db;
 
-CREATE TABLE users;
-CREATE TABLE items;
-
 INSERT INTO users (name, phone, createdAt, updatedAt)
 VALUES ('Margarita', '16516001396', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
 
@@ -28,7 +25,7 @@ INSERT INTO items (item, description, picture, category, createdAt, updatedAt, U
 
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Chia Pet', 'Ch-ch-ch-chia!', 'https://shop.pbs.org/ccstore/v1/images/?source=/file/v2073843211020553516/products/DTCP501.0.jpg', 'Shwutever', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 1);
 
-INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Speedo', 'You wont look better than I will in this, sorry.', 'https://shop.pbs.org/ccstore/v1/images/?source=/file/v2073843211020553516/products/DTCP501.0.jpg', 'Apparel', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 2);
+INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Speedo', 'You wont look better than I will in this, sorry.', 'https://photos.cdn-outlet.com/photos/options/8134457-210-1A-zoomin.jpg', 'Apparel', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 2);
 
 
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Speedo', 'You wont look better than I will in this, sorry.', 'http://scstylecaster.files.wordpress.com/2013/08/michaelglove.jpg', 'Shwutever', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 4);
