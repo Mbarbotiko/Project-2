@@ -12,14 +12,48 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>SWAPIGANS</title>
 </head>
 
 <body>
-    <header class="no-padding light-green darken-2">
-        <h1 class="center-align">SWAPIGANS</h1>
+    <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li>
+                <a href="#!">one</a>
+            </li>
+            <li>
+                <a href="#!">two</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#!">three</a>
+            </li>
+        </ul>
         <nav>
+            <div class="nav-wrapper light-green">
+                <a href="#!" class="brand-logo center-align">SWAPIGANS</a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="something.html">Swap Your Spouse!
+                            <i class="material-icons right">wc</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="things.html">Swap Your Stuff!
+                            <i class="material-icons right">swap_calls</i>
+                        </a>
+                    </li>
+                    <!-- Dropdown Trigger  this needs some jQ shit  $(".dropdown-trigger").dropdown();-->
+
+                    <li>
+                        <a class="dropdown-trigger" href="#!" data-target="dropdown1">Categories of Stuff
+                            <i class="material-icons right">arrow_drop_down_circle</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="nav-wrapper light-green darken-3">
                 <form>
                     <div class="input-field">
@@ -32,76 +66,75 @@
                 </form>
             </div>
         </nav>
+
     </header>
     <div class="content">
-        <div class="show-all">
+
+
+        <br>
+        <br>
+        <!-- Image Gallery -->
+
+        <div class="container ">
+            <h5>Header Text Here</h5>
+
+
+            <div class="card-items">
+
+            </div>
 
         </div>
 
-        <!-- <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg">
-                        <span class="card-title">Handful of Dice</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light green">
-                            <i class="material-icons">Swap!</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <p>I am hoping to swap this handful of dice for hygiene items.</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
 
 
 
 
-    </div>
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="right-align">Created by Powerful People</h5>
-                    <p class="grey-text text-lighten-4">If I had anything clever to say, this is where I would type it.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="left-align">Our Team:</h5>
-                    <ul>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://github.com/AlBassett">Al</a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://github.com/prettykatemachine">Kate</a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://github.com/Sfaunillan">Stephen</a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="https://github.com/Mbarbotiko">Margarita</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
+
+        <footer class="page-footer">
             <div class="container">
-                © 2018 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <div class="row ">
+                    <div class="col l6 s12">
+                        <h5 class="right-align">Created by Powerful People</h5>
+                        <p class="grey-text text-lighten-4">If I had anything clever to say, this is where I would type it.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="left-align ">Our Team:</h5>
+                        <ul>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://github.com/AlBassett ">Al</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://github.com/prettykatemachine ">Kate</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://github.com/Sfaunillan ">Stephen</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="https://github.com/Mbarbotiko ">Margarita</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Copyright Text
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+                </div>
+            </div>
+        </footer>
 
-    <script src="./js/view-all.js" type="text/javascript"></script>
-    <!-- add jqueryscript here -->
 
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+        <script src="./js/view-all.js" type="text/javascript"></script>
+
+        <script>
+            $(".dropdown-trigger ").dropdown();
+        </script>
 </body>
 
 </html>
