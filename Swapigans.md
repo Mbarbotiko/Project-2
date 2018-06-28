@@ -60,7 +60,7 @@ INDEX
 /tech
 /lunch
 /spouse
-/shwuh
+/Shwutever
 /confirm
 
 
