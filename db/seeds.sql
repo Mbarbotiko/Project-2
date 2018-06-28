@@ -1,6 +1,8 @@
 
 USE swaps_db;
 
+CREATE TABLE users;
+CREATE TABLE items;
 
 INSERT INTO users (name, phone, createdAt, updatedAt)
 VALUES ('Margarita', '16516001396', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
