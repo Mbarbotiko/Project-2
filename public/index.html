@@ -1,51 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-<link rel="stylesheet" href="style.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
 
-    <title>SWAPIGANS</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>SWAPIGANS</title>
 </head>
+
 <body>
-    <header class="no-padding light-green darken-2">
-<h1>SWAPIGANS</h1>   
-  <nav>
-        <div class="nav-wrapper light-green darken-3">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
-      </nav>
-    </header>
-    <div class="content">
+  <header>
+    <ul id="dropdown1" class="dropdown-content">
+      <li>
+        <a href="#!">one</a>
+      </li>
+      <li>
+        <a href="#!">two</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="#!">three</a>
+      </li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper light-green">
+        <a href="#!" class="brand-logo center-align">SWAPIGANS</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="something.html">Swap Your Spouse!
+              <i class="material-icons right">wc</i>
+            </a>
+          </li>
+          <li>
+            <a href="things.html">Swap Your Stuff!
+              <i class="material-icons right">swap_calls</i>
+            </a>
+          </li>
+          <!-- Dropdown Trigger  this needs some jQ shit  $(".dropdown-trigger").dropdown();-->
+
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown1">Categories of Stuff
+              <i class="material-icons right">arrow_drop_down_circle</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--<div class="nav-wrapper light-green darken-3">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div> 
+          The Search bar is still a thing... Just need to make it not hide behind gallery item-->
+    </nav>
+
+  </header>
+     <!-- Image Gallery -->
+
+     <div class="container ">
+        <h5>Header Text Here</h5>
+    
+        <div class="row card">
+          
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image ">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title ">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image ">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title ">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
+    
+    
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image ">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title ">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
         
-  <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg" height="200px" width="100px">
-              <span class="card-title">Handful of Dice</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>I am hoping to swap this handul of dice for hygiene items.</p>
-            </div>
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image ">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title ">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col s12 m6 l4">
+              <div class="card ">
+                  <div class="card-image ">
+                    <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
+                    <span class="card-title ">Handful of Dice</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light green "><i class="material-icons ">swap_calls</i></a>
+                  </div>
+                  <div class="card-content ">
+                    <p>I am hoping to swap this handful of dice for hygiene items.</p>
+                  </div>
+                </div>
+          </div>
+          
+         </div>
+    
+      </div>
+    
+    
+
+   
+
+  
+
+    <footer class="page-footer ">
+      <div class="container ">
+        <div class="row ">
+          <div class="col l6 s12 ">
+            <h5 class="right-align ">Created by Powerful People</h5>
+            <p class="grey-text text-lighten-4 ">If I had anything clever to say, this is where I would type it.</p>
+          </div>
+          <div class="col l4 offset-l2 s12 ">
+            <h5 class="left-align ">Our Team:</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3 " href="https://github.com/AlBassett ">Al</a></li>
+              <li><a class="grey-text text-lighten-3 " href="https://github.com/prettykatemachine ">Kate</a></li>
+              <li><a class="grey-text text-lighten-3 " href="https://github.com/Sfaunillan ">Stephen</a></li>
+              <li><a class="grey-text text-lighten-3 " href="https://github.com/Mbarbotiko ">Margarita</a></li>
+            </ul>
           </div>
         </div>
       </div>
-               
-    </div>
+      <div class="footer-copyright ">
+        <div class="container ">
+        © 2018 Copyright Text
+       
+        </div>
+      </div>
+    </footer>
+        
 </body>
+<script>
+  $(".dropdown-trigger ").dropdown();
+</script>
 </html>

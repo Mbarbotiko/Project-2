@@ -16,7 +16,6 @@ cloudinary.config(keys.cloudinary);
 
 // Test and example on how to upload images to cloudinary
 cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg", function(result) {
-    console.log(result)
 });
 
 // Test and example on how to implement twilio API
@@ -27,3 +26,23 @@ cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46
 // })
 // .then((message) => console.log(message.sid)).catch(console.error);
 
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+var PORT = process.env.PORT || 8080;
+var db = require("./models");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+// Routes
+// 
+require("./routes/html-routes.js")(app);
+require("./routes/user-api.js")(app);
+require("./routes/item-api.js")(app);
+
+db.sequelize.sync().then(function () {
+    //{ force: true } pass into sync if you want DB to be dropped when server is initialized.
+    app.listen(PORT, function () {
+        console.log("Listening on PORT " + PORT);
+    });
+});
