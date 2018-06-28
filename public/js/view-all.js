@@ -17,7 +17,7 @@ $.ajax({
 
 
         var itemName = $(showAllContainer).append("Item: "+
-        res[i].Items[0].item);
+        res[i].Items[0++].item);
         console.log(res[i].Items[0].item);
 
         var itemDescription = $(showAllContainer).append("Description: "+
