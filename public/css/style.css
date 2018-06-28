@@ -49,3 +49,25 @@ nav {
     .page-footer {
         background-color: #2f4f4f;
     }
+.brand-logo {
+  font-family: "Cabin Sketch", cursive;
+}
+
+.btn-floating {
+  width: 100px;
+  height: 75px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.card-title {
+  background-color: lightslategrey;
+}
+
+.page-footer {
+  background-color: #2f4f4f;
+}
