@@ -14,5 +14,28 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, "../public/view.html"));
     });
 
+    app.get("/apparel", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/apparel.html"));
+    });
+
+    app.get("/homeoffice", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/homeoffice.html"));
+    });
+
+    app.get("/tech", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/tech.html"));
+    });
+
+    app.get("/lunch", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/lunch.html"));
+    });
+
+    app.get("/spouse", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/spouse.html"));
+    });
+
+    app.get("/shwutever", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/shwutever.html"));
+    });
 
 };

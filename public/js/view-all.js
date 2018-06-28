@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var showAllContainer = $(".show-all");
+    var cardContainer = $(".card-items")
 
 
     var queryURL = "http://localhost:8080/api/items";
@@ -23,17 +23,22 @@ $(document).ready(function () {
 
                 // $(showAllContainer).append(allItems);EXAMPLE WILL PRINT ITEM NAMES TO THIS CONTAINER.
 
-                showAllContainer.append(
-                    '<div class="row">' +
-                    '<div class="col s12 m6">' +
-                    '<div class="card blue-grey darken-1">' +
-                    '<div class="card-content white-text">' +
+                cardContainer.append(
+                    `<div class="row card">` +
+                    `<div class="col s12 m6 l4">` +
+                    `<div class="card ">` +
+                    `<div class="card-image">` +
+                    `<img src='${printEverything.picture}' alt='Item Picture'>` +
                     `<span class="card-title">${allItems}</span>` +
-                    `<p id="viewAllDesc"> Description: ${allDescriptions} </p>` +
-                    (`<img src='${printEverything.picture}' alt='Item Picture'>`) +
-                    `<p id="viewAllName"> User: ${allUsersNames} </p>` +
-                    `<p id="viewAllCategory"> Category: ${allCategories} </p>`
-                );
+                    `<a class="btn-floating halfway-fab waves-effect waves-light green">` +
+                    `<i class="material-icons ">swap_calls</i>` +
+                    `</a>` +
+                    `</div>` +
+                    `<div class="card-content ">` +
+                    `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
+                    `</div>` +
+                    `</div>` +
+                    `</div>`);
             });
 
 
