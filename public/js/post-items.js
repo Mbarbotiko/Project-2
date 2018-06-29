@@ -1,70 +1,52 @@
 $(document).ready(function() {
-  // Getting references to the name input and author container, as well as the table body
-  var nameInput = $("#Item-name");
-  var itemList = $("body");
-  var itemContainer = $(".");
-  // Adding event listeners to the form to create a new object, and the button to delete
-  // an Author
-  $(document).on("submit", "#", handleItemFormSubmit);
-  $(document).on("click", ".delete-item", handleDeleteButtonPress);
+  // Getting jQuery references to the post body, title, form, and author select
+  var bodyInput = $("#Item");
+  var titleInput = $("#Description");
+  var form = $("#post");
+  // Adding an event listener for when the form is submitted
+  $(form).on("submit", handleFormSubmit);
+  // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
+  var url = window.location.search;
+  var postId;
+  var authorId;
+  // Sets a flag for whether or not we're updating a post to be false initially
+  var updating = false;
 
-   // Getting the initial list of Authors
-   getAuthors();
+  // If we have this section in our url, we pull out the post id from the url
+  // In '?post_id=1', postId is 1
+  if (url.indexOf("?post_id=") !== -1) {
+    postId = url.split("=")[1];
+    getPostData(postId, "post");
+  }
 
-   // A function to handle what happens when the form is submitted to create a new Author
-   function handleItemFormSubmit(event) {
-     event.preventDefault();
-     // Don't do anything if the name fields hasn't been filled out
-     if (!nameInput.val().trim().trim()) {
-       return;
-     }
-     // Calling the upsertAuthor function and passing in the value of the name input
-     upsertItem({
-       name: nameInput
-         .val()
-         .trim()
-     });
-   }
- 
-   // A function for creating an author. Calls getItem upon completion
-   function upsertItem(itemData) {
-     $.post("/api/post", itemData)
-       .then(getItem);
-   }
- 
-   // Function for creating a new list row for authors
-   function createAuthorRow(itemData) {
-     var newTr = $("<tr>");
-     newTr.data("author", itemData);
-     newTr.append("<td>" + itemData.name + "</td>");
-     newTr.append("<td> " + itemData.Posts.length + "</td>");
-     newTr.append("<td><a href='/blog?author_id=" + itemData.id + "'>Go to Posts</a></td>");
-     newTr.append("<td><a href='/cms?author_id=" + itemData.id + "'>Create a Post</a></td>");
-     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
-     return newTr;
-   }
- 
-   // Function for retrieving authors and getting them ready to be rendered to the page
-   function getItem() {
-     $.get("/api/view", function(data) {
-       var rowsToAdd = [];
-       for (var i = 0; i < data.length; i++) {
-         rowsToAdd.push(createAuthorRow(data[i]));
-       }
-       renderAuthorList(rowsToAdd);
-       nameInput.val("");
-     });
-   }
- 
-   // A function for rendering the list of authors to the page
-   function renderAuthorList(rows) {
-     authorList.children().not(":last").remove();
-     authorContainer.children(".alert").remove();
-     if (rows.length) {
-       console.log(rows);
-       authorList.prepend(rows);
-     }
-     else {
-       renderEmpty();
-     }
-   }
+
+  // A function for handling what happens when the form to create a new post is submitted
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    // Wont submit the post if we are missing a body, title, or author
+    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+      return;
+    }
+    console.log(handleFormSubmit);
+    // Constructing a newPost object to hand to the database
+    var newPost = {
+      item: titleInput
+        .val()
+        .trim(),
+      description: bodyInput
+        .val()
+        .trim(),
+    };
+
+    // If we're updating a post run updatePost to update a post
+    // Otherwise run submitPost to create a whole new post
+    if (updating) {
+      newPost.id = postId;
+      updatePost(newPost);
+    }
+    else {
+      submitPost(newPost);
+    }
+  }
+});
+
