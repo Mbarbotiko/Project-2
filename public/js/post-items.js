@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     var itemInput = $("#Item");
-    //var catInput = $("#Category");
+    var catInput = $("#Category");
     var desInput = $("#Description");
     var imageInput = $("#Image")
     var customerForm = $("#customerform");
@@ -11,7 +11,8 @@ $( document ).ready(function() {
         var newItem = {
             item: itemInput.val().trim(),
             description: desInput.val().trim(),
-            picture: imageInput.val().trim()
+            picture: imageInput.val().trim(),
+            category: catInput.val().trim()
         };
 
         $.post("/api/items", newItem)
