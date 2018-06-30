@@ -9,26 +9,23 @@ $(document).ready(function () {
     })
         .then(function (res) {
 
-            res.forEach(function (printEverything) {
-
-                // $(showAllContainer).append(printEverything.item); (keeping these as an example how to append to a container. $(chosen container).append(use variable names below  allItems);
-
+            res.forEach(function (lunchItem) {
+                var lunchQuery = lunchItem.category;
+                if (lunchQuery==="Lunch"){                
                 var pictureIMG = $("<img>");
-                pictureIMG.attr({ "src": printEverything.picture });
-                var allItems = printEverything.item;
-                var allDescriptions = printEverything.description;
-                var allCategories = printEverything.category;
+                pictureIMG.attr({ "src": lunchItem.picture });
+                var allItems = lunchItem.item;
+                var allDescriptions = lunchItem.description;
+                var allCategories = lunchItem.category;
                 var allImages = pictureIMG;
-                var allUsersNames = printEverything.User.name;
-
-                // $(showAllContainer).append(allItems);EXAMPLE WILL PRINT ITEM NAMES TO THIS CONTAINER.
+                var allUsersNames = lunchItem.User.name;
 
                 cardContainer.append(
                     `<div class="row card">` +
                     `<div class="col s12 m6 l4">` +
                     `<div class="card ">` +
                     `<div class="card-image">` +
-                    `<img src='${printEverything.picture}' alt='Item Picture'>` +
+                    `<img src='${lunchItem.picture}' alt='Item Picture'>` +
                     `<span class="card-title">${allItems}</span>` +
                     `<a class="btn-floating halfway-fab waves-effect waves-light green">` +
                     `<i class="material-icons ">swap_calls</i>` +
@@ -39,6 +36,8 @@ $(document).ready(function () {
                     `</div>` +
                     `</div>` +
                     `</div>`);
+
+                }
             });
 
 
