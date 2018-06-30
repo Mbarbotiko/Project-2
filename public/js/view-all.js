@@ -24,7 +24,7 @@ $(document).ready(function () {
 
                 cardContainer.append(
                     `<div class="col s12 m6 l4">` +
-                    `<div class="card ">` +
+                    `<div class="card">` +
                     `<div class="card-image">` +
                     `<img src='${printEverything.picture}' alt='Item Picture'>` + `<span class="card-title">${allItems}</span>` +//add an  event listener here so in the loop it will listen for a click and gather item information to force into the array we will create. give each item an attribute by going through the response here and making the attribute the ID/Whatever is going to be swapped.  Then use the attribute to either push into array as selected item to swap OR pass as an arugment in a function to swap.
                     icon+
