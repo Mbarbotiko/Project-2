@@ -1,22 +1,22 @@
-// Access to key for twilio keys
-require("dotenv").config();
+// // Access to key for twilio keys
+// //require("dotenv").config();
 
-// Access to key.js for twitter and spotify keys
-var keys = require("./keys.js");
+// // Access to key.js for twitter and spotify keys
+// var keys = require("./keys.js");
 
-// Required NPM's
-var Twilio = require('twilio');
-var cloudinary = require('cloudinary');
+// // Required NPM's
+// var Twilio = require('twilio');
+// var cloudinary = require('cloudinary');
 
-// twilio constructor
-var twilio = new Twilio();
+// // twilio constructor
+// var twilio = new Twilio();
 
-// cloudinary calls
-cloudinary.config(keys.cloudinary);
+// // cloudinary calls
+// cloudinary.config(keys.cloudinary);
 
-// Test and example on how to upload images to cloudinary
-cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg", function(result) {
-});
+// // Test and example on how to upload images to cloudinary
+// cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg", function(result) {
+// });
 
 // Test and example on how to implement twilio API
 // twilio.messages.create({
