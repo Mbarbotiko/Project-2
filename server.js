@@ -15,8 +15,8 @@ var twilio = new Twilio();
 cloudinary.config(keys.cloudinary);
 
 // Test and example on how to upload images to cloudinary
-cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg", function(result) {
-});
+// cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg", function(result) {
+// });
 
 // Test and example on how to implement twilio API
 // twilio.messages.create({
