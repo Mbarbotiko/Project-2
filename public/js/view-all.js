@@ -32,62 +32,29 @@ $(document).ready(function () {
 
         })
 
-    var clickCount = 0;
+
+    var selectedItems = []
+    function emptyselectedItemsArr() {
+        selectedItems = [];
+    }
+
     $(document.body).on('click', '.material-icons', function () {
-        clickCount++;
-
-    });
-
-
-    var firstSelectedItem = []
-    function emptyFirstArray() {
-        firstSelectedItem = [];
-    }
-
-    var secondSelectedItem = []
-    function emptySecondArray() {
-        secondSelectedItem = [];
-    }
-
-    // switch(expression) {
-    //     case n:
-    //         code block
-    //         break;
-    //     case n:
-    //         code block
-    //         break;
-    //     default:
-    //         code block
-    // }
-
-
-        $(document.body).on('click', '.material-icons', function () {
-            if (clickCount == 1) {
-
-                emptyFirstArray();
-                firstSelectedItem.push($(this).attr('id'));
-                // $($(this)).css({"background-color":"pink"})
-                console.log("First Item ID is: " + firstSelectedItem);
-
+        selectedItems.push($(this).attr('id'));
+        // $($(this)).css({"background-color":"pink"})
+        console.log(" First Item ID is: " + selectedItems[0] + " Second Item ID is: " + selectedItems[1]);
+        if (selectedItems.length == 2) {
+            confirm("Press a button! OK SWAP CANCEL GO BACK AND PICK");
+            if (confirm == true) {
+                //write code here to swap items with these ID's in the database
 
             } else {
-
-                emptySecondArray();
-                secondSelectedItem.push($(this).attr('id'));
-                // $($(this)).css({"background-color":"pink"})
-                console.log("Second Item ID is: " + secondSelectedItem);
-                //the item ID is being held in the 0 of the array.
-
-                console.log("Items "+ firstSelectedItem+" AND "+secondSelectedItem+" will be swapped?");
-            
+                emptyselectedItemsArr();
 
             }
-        
-               
-          
-        });
-
-
+        }
 
 
     });
+
+
+});
