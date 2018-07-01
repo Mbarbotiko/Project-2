@@ -32,11 +32,62 @@ $(document).ready(function () {
 
         })
 
+    var clickCount = 0;
     $(document.body).on('click', '.material-icons', function () {
-        var selectedItem = []
-        selectedItem.push($(this).attr('id'))
-        console.log("Item ID is: "+ selectedItem);
-    })
-   
- 
-});
+        clickCount++;
+
+    });
+
+
+    var firstSelectedItem = []
+    function emptyFirstArray() {
+        firstSelectedItem = [];
+    }
+
+    var secondSelectedItem = []
+    function emptySecondArray() {
+        secondSelectedItem = [];
+    }
+
+    // switch(expression) {
+    //     case n:
+    //         code block
+    //         break;
+    //     case n:
+    //         code block
+    //         break;
+    //     default:
+    //         code block
+    // }
+
+
+        $(document.body).on('click', '.material-icons', function () {
+            if (clickCount == 1) {
+
+                emptyFirstArray();
+                firstSelectedItem.push($(this).attr('id'));
+                // $($(this)).css({"background-color":"pink"})
+                console.log("First Item ID is: " + firstSelectedItem);
+
+
+            } else {
+
+                emptySecondArray();
+                secondSelectedItem.push($(this).attr('id'));
+                // $($(this)).css({"background-color":"pink"})
+                console.log("Second Item ID is: " + secondSelectedItem);
+                //the item ID is being held in the 0 of the array.
+
+                console.log("Items "+ firstSelectedItem+" AND "+secondSelectedItem+" will be swapped?");
+            
+
+            }
+        
+               
+          
+        });
+
+
+
+
+    });
