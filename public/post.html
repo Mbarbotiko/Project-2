@@ -79,14 +79,14 @@
   <br>
   <br>
 
-     <div class="container ">
+     <div class="container">
        <br>
         <h5>POST ITEM</h5>
     
         <div class="row card">
           <div class="content" id="customerform">
             <div class="row">
-              <form class="col s10">
+              <form class="col s10" id="customerform">
                 <div class="row">
                   <div class="input-field col s4">
                     <input id="Item" type="text" class="validate">
@@ -118,6 +118,11 @@
                     <button class="btn waves-effect waves-light submit" type="submit">Submit
                       <i class="material-icons right">send</i>
                     </button>
+                  </div>
+                  <div class="input-field col s4">
+                      <select class="browser-default" id="user">
+                          <option value="value" disabled selected>User</option>
+                      </select>
                   </div>
                 </div>
               </form>
