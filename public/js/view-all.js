@@ -40,10 +40,18 @@ $(document).ready(function () {
                 var itemTwo = selectedItems[1];
                 console.log("First item chosen ID: " + itemOne);
                 console.log("Second item chosen ID: " + itemTwo);
-                
+
                 if (selectedItems.length == 2) {
                     confirm("Press a button! OK SWAP CANCEL GO BACK AND PICK");
                     if (confirm == true) {
+                        // update fruit a
+                        // inner join fruit b on a.id <> b.id
+                        // set a.color = b.color,
+                        //     a.name = b.name,
+                        //     a.calories = b.calories
+                        // where a.id in (2, 5) and b.id in (2, 5)
+
+
                         //code here to handle swap in SQL
                         //Option A use a function/AJAX
                         //Option B use a sequelize function to delete from DB
@@ -62,7 +70,7 @@ $(document).ready(function () {
                         //   deletePost();
                         //Option B:
 
-                        // To update several rows at once:
+                        // // To update several rows at once:
 
                         // Task.bulkCreate([
                         //     { subject: 'programming', status: 'executing' },
