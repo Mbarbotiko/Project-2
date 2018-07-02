@@ -12,7 +12,6 @@ $(document).ready(function () {
                 var allItems = printEverything.item;
                 var allDescriptions = printEverything.description;
                 var allCategories = printEverything.category;
-                var allImages = pictureIMG;
                 var allUsersNames = printEverything.User.name;
                 var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printEverything.id}>swap_calls</i></a>`
                 cardContainer.append(
@@ -23,10 +22,10 @@ $(document).ready(function () {
                     `<img src='${printEverything.picture}' alt='Item Picture'>` +
                     `<span class="casrd-title">${allItems}</span>` +
                     `<a class="btn-floating halfway-fab waves-effect waves-light green">` +
-                    `<i class="material-icons ">swap_calls</i>` +
+                    `<i class="material-icons">swap_calls</i>` +
                     `</a>` +
                     `</div>` +
-                    `<div class="card-content ">` +
+                    `<div class="card-content">` +
                     `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
                     `</div>` +
                     `</div>` +
