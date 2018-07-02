@@ -13,10 +13,7 @@ VALUES ('Kate', '16128887434', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
 INSERT INTO users (name, phone, createdAt, updatedAt)
 VALUES ('Al', '16512160675', '2018-06-25 21:22:58', '2018-06-25 21:22:58');
 
-
-
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Old Boot', 'Spectacular Vintage BOOT!', 'https://www.blueribbonpet.com/wp-content/uploads/EE-1733.jpg', 'Apparel', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 1 );
-
 
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Half Eaten Apple', 'Almost a meal!', 'https://thumbs.dreamstime.com/b/half-eaten-apple-isolated-white-background-39418691.jpg', 'Lunch', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 2);
 
