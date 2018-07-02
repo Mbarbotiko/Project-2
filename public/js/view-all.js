@@ -24,12 +24,12 @@ $(document).ready(function () {
                 // $(showAllContainer).append(allItems);EXAMPLE WILL PRINT ITEM NAMES TO THIS CONTAINER.
 
                 cardContainer.append(
-                    // `<div class="row card">` +
+                    `<div class="row card">` +
                     `<div class="col s12 m6 l4">` +
                     `<div class="card">` +
                     `<div class="card-image">` +
                     `<img src='${printEverything.picture}' alt='Item Picture'>` +
-                    `<span class="card-title">${allItems}</span>` +
+                    `<span class="casrd-title">${allItems}</span>` +
                     `<a class="btn-floating halfway-fab waves-effect waves-light green">` +
                     `<i class="material-icons ">swap_calls</i>` +
                     `</a>` +
@@ -40,9 +40,5 @@ $(document).ready(function () {
                     `</div>` +
                     `</div>`);
             });
-
-
         })
-
-
 });
