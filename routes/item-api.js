@@ -20,6 +20,17 @@ module.exports = function (app) {
             res.json(dbItem);
         });
     });
+
+    app.delete("/api/items/:id", function(req, res) {
+        db.Item.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbItem) {
+          res.json(dbItem);
+        });
+      });
+
 }
 
 //use .catch to capture errors at the end of the post function

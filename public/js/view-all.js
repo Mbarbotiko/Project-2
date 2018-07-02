@@ -19,8 +19,7 @@ $(document).ready(function () {
                     `<div class="col s12 m6 l4">` +
                     `<div class="card">` +
                     `<div class="card-image">` +
-                    `<img src='${printEverything.picture}' alt='Item Picture'>` + `<span class="card-title">${allItems}</span>` +//add an  event listener here so in the loop it will listen for a click and gather item information to force into the array we will create. give each item an attribute by going through the response here and making the attribute the ID/Whatever is going to be swapped.  Then use the attribute to either push into array as selected item to swap OR pass as an arugment in a function to swap.
-                    icon +
+                    `<img src='${printEverything.picture}' alt='Item Picture'>` + `<span class="card-title">${allItems}</span>` + icon +
                     `</div>` +
                     `<div class="card-content ">` +
                     `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
@@ -33,23 +32,38 @@ $(document).ready(function () {
             function emptyselectedItemsArr() {
                 selectedItems = [];
             }
-        
+
             $(document.body).on('click', '.material-icons', function () {
                 selectedItems.push($(this).attr('id'));
-                // $($(this)).css({"background-color":"pink"})
+                // $($(this)).css({"background-color":"pink"})//just messing around with showing user that the item is selected, worry about this later after swap function is working.
                 var itemOne = selectedItems[0];
                 var itemTwo = selectedItems[1];
-                console.log("First item chosen ID: "+itemOne);
-                console.log("Second item chosen ID: "+itemTwo);
-                // console.log(res.id+itemOne);
-                // console.log(res.id+itemTwo);
+                console.log("First item chosen ID: " + itemOne);
+                console.log("Second item chosen ID: " + itemTwo);
+                
                 if (selectedItems.length == 2) {
                     confirm("Press a button! OK SWAP CANCEL GO BACK AND PICK");
                     if (confirm == true) {
                         //code here to handle swap in SQL
-        
+                        //Option A use a function/AJAX
+                        //Option B use a sequelize function to delete from DB
+                        //Option A:
+                        // function deletePost(itemOne) {
+                        //     $.ajax({
+                        //       method: "DELETE",
+                        //       url: "/api/items/?id="+itemOne
+                        //     })
+                        //       .then(function() {
+                        //         getPosts(printEverything);
+                        //         console.log(printEverything);
+                        //       });
+                        //   }
+
+                        //   deletePost();
+                        //Option B:
+
                         // To update several rows at once:
-        
+
                         // Task.bulkCreate([
                         //     { subject: 'programming', status: 'executing' },
                         //     { subject: 'reading', status: 'executing' },
@@ -62,22 +76,22 @@ $(document).ready(function () {
                         // }).spread((affectedCount, affectedRows) => {
                         //     // .update returns two values in an array, therefore we use .spread
                         //     // Notice that affectedRows will only be defined in dialects which support returning: true
-        
+
                         //     // affectedCount will be 2
                         //     return Task.findAll();
                         // }).then(tasks => {
                         //     console.log(tasks) // the 'programming' tasks will both have a status of 'inactive'
                         // })
-        
-        
+
+
                     } else {
                         emptyselectedItemsArr();
                         console.log(selectedItems);
-        
+
                     }
                 }
-        
-        
+
+
             });
 
 
