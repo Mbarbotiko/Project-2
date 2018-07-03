@@ -75,56 +75,77 @@ $(document).ready(function () {
                     $.ajax({
                         url: queryURL,
                         method: 'GET'
-                    }).then(function(data){
+                    }).then(function (data) {
                         renderUserList(data);
                     });
-                    
-                      // A function to get users and then render our list of users
-                    var userSelect = $("#user");
-                
-                    function renderUserList(data) {
-                        
-                        var rowsToAdd = [];
-                
-                        var selectBox = $("#user");
-                
-                        for (var i = 0; i < data.length; i++) {
-                          selectBox.append(createUserRow(data[i]));
-                          // oncancel this needs to be cleared its appending over and over again to the list.
 
-                        //   https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
-                          
+                    // A function to get users and then render our list of users
+                    var userSelect = $("#user");
+
+                    function renderUserList(data) {
+
+                        var rowsToAdd = [];
+
+                        var selectBox = $("#user");
+
+                        for (var i = 0; i < data.length; i++) {
+                            selectBox.append(createUserRow(data[i]));
+                            // oncancel this needs to be cleared its appending over and over again to the list.
+
+                            //   https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
+
                         }
-                      };
-                
+                    };
+
                     // Creates the user options in the dropdown
                     function createUserRow(user) {
-                
+
                         var listOption = $("<option>");
-                
+
                         listOption.attr("value", user.id);
                         listOption.text(user.name);
-                        console.log(listOption);
                         return listOption;
-                       
+
                         $(document.body).on('click', )
-                        
-                      };
-                    //   var selectedItems = []
-                    //   function emptyselectedItemsArr() {
-                    //       selectedItems = [];
-                    //   }
-          
-                    //   $(document.body).on('click', '.material-icons', function () {
-                    //       selectedItems.push($(this).attr('id'));
-                    //       // $($(this)).css({"background-color":"pink"})//just messing around with showing user that the item is selected, worry about this later after swap function is working.
-                    //       var itemOne = selectedItems[0];
-                    //       var itemTwo = selectedItems[1];
-                    //       console.log("First item chosen ID: " + itemOne);
-                    //       console.log("Second item chosen ID: " + itemTwo);
-                    //get attribute from drop down <option> then query the api for that users name return their items and to the modal using html method with swap icons. once item is selected show a confirm yes no, if yes run code below to do swap and refresh page/ redirect home.  If no run the modal close function above and empty array.
-          
-            
+
+                    };
+
+
+                    $('#user').on('click', 'option:selected', function () {
+                        alert("YEAH");
+                        var userSelectedItem = ($(this.attr('value')))
+                        console.log(userSelectedItem);//cant get click or select to work on drop down to get user id attribute to put into ajax call below.
+
+
+                        $.ajax({
+                            url: "http://localhost:8080/api/users/" + userSelectedItem,
+                            method: 'GET'
+                        })
+                            .then(function (res) {
+                                res.forEach(function (printUsersStuff) {
+                                    var showUsersStuff = $('.card-smallShowMyStuff');
+                                    var pictureIMG = $("<img>");
+                                    pictureIMG.attr({ "src": printUsersStuff.picture });
+                                    var allImages = pictureIMG;
+                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersStuff.id}>swap_calls</i></a>`
+                                    showUsersStuff.append(
+                                        `<div class="col s12 m6 l4">` +
+                                        `<div class="card">` +
+                                        `<div class="card-image">` +
+                                        `<img src='${printUsersStuff.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersStuff.item}</span>` + icon +
+                                        `</div>` +
+                                        `<div class="card-content ">` +
+                                        `<p>${printUsersStuff.description}</p>` + `<p>Category: ${printUsersStuff.category}<p>` + `<p>Posted by: ${printUsersStuff.name}</p>` +
+                                        `</div>` +
+                                        `</div>` +
+                                        `</div>`);
+                                });
+                            })
+
+                    });
+
+
+
 
 
                     // if (wasConfirmed) {
