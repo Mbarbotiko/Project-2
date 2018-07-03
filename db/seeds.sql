@@ -25,7 +25,7 @@ INSERT INTO items (item, description, picture, category, createdAt, updatedAt, U
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Speedo', 'You wont look better than I will in this, sorry.', 'https://photos.cdn-outlet.com/photos/options/8134457-210-1A-zoomin.jpg', 'Apparel', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 2);
 
 
-INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Speedo', 'You wont look better than I will in this, sorry.', 'http://scstylecaster.files.wordpress.com/2013/08/michaelglove.jpg', 'Shwutever', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 4);
+INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('Sweet Glove', 'I think it used to belong to someone famous.', 'http://scstylecaster.files.wordpress.com/2013/08/michaelglove.jpg', 'Shwutever', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 4);
 
 
 INSERT INTO items (item, description, picture, category, createdAt, updatedAt, Userid) VALUES ('My wife Jackie', 'She can cook if you have a microwave', 'http://propeller.hu/images/cikk/2016_01/fulvia.jpg', 'Spouse', '2018-06-25 21:22:58', '2018-06-25 21:22:58' , 4);

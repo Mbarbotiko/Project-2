@@ -55,29 +55,19 @@ module.exports = function (app) {
   });
 
 
-  // app.get("/api/swaptest", function (req, res) {
-  //   var testId1 = 1;
-  //   var testId2 = 3;
-  //   db.sequelize.query(
-  //     `UPDATE
-  //     items t1 INNER JOIN users t2
-  //     ON (t1.id, t2.id) IN ((${testId1}, ${testId2}),(${testId2},${testId1}))
-  //   SET
-  //    t1.item = t2.item,
-  //    t1.description = t2.description,
-  //    t1.picture = t2.picture,
-  //    t1.category = t2.category,
-  //    t1.createdAt = t2.createdAt,
-  //    t1.updatedAt = t2.updatedAt,
-  //    t1.UserId = t2.UserId`
-  //   ).then(function(db){
-  //     console.log(db)
-  //     res.json(db);
-  //   });
-  // });
-
-
+  app.post("/api/swap", function (req, res) {
+    const { itemOne, itemTwo } = req.body;
+    db.sequelize.query(
+      `update items a
+      inner join items b on a.id <> b.id
+        set a.UserId = b.UserId
+      where a.id in (:idA,:idB) and b.id in (:idA,:idB)`,
+      { replacements: { idA: itemOne, idB: itemTwo } }
+    )
+    .then(() => res.send(200))
+    .catch(() => res.send(500));
+  });
 
 };
 
-//use .catch to capture errors at the end of the post function
+
