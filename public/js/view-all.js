@@ -63,13 +63,68 @@ $(document).ready(function () {
 
                         });
 
-                    $(document.body).on('click', '#cancel-button', function (){
+                    $(document.body).on('click', '#cancel-button', function () {
                         $('.modal').modal("close");
                         emptyselectedItemsArr();
-                        
-                    }
 
-                    )
+                    })
+
+
+
+                    var queryURL = "http://localhost:8080/api/users";
+                    $.ajax({
+                        url: queryURL,
+                        method: 'GET'
+                    }).then(function(data){
+                        renderUserList(data);
+                    });
+                    
+                      // A function to get users and then render our list of users
+                    var userSelect = $("#user");
+                
+                    function renderUserList(data) {
+                        
+                        var rowsToAdd = [];
+                
+                        var selectBox = $("#user");
+                
+                        for (var i = 0; i < data.length; i++) {
+                          selectBox.append(createUserRow(data[i]));
+                          // oncancel this needs to be cleared its appending over and over again to the list.
+
+                        //   https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
+                          
+                        }
+                      };
+                
+                    // Creates the user options in the dropdown
+                    function createUserRow(user) {
+                
+                        var listOption = $("<option>");
+                
+                        listOption.attr("value", user.id);
+                        listOption.text(user.name);
+                        console.log(listOption);
+                        return listOption;
+                       
+                        $(document.body).on('click', )
+                        
+                      };
+                    //   var selectedItems = []
+                    //   function emptyselectedItemsArr() {
+                    //       selectedItems = [];
+                    //   }
+          
+                    //   $(document.body).on('click', '.material-icons', function () {
+                    //       selectedItems.push($(this).attr('id'));
+                    //       // $($(this)).css({"background-color":"pink"})//just messing around with showing user that the item is selected, worry about this later after swap function is working.
+                    //       var itemOne = selectedItems[0];
+                    //       var itemTwo = selectedItems[1];
+                    //       console.log("First item chosen ID: " + itemOne);
+                    //       console.log("Second item chosen ID: " + itemTwo);
+                    //get attribute from drop down <option> then query the api for that users name return their items and to the modal using html method with swap icons. once item is selected show a confirm yes no, if yes run code below to do swap and refresh page/ redirect home.  If no run the modal close function above and empty array.
+          
+            
 
 
                     // if (wasConfirmed) {

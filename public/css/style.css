@@ -36,6 +36,12 @@ body {
   float: left;
 }
 
+.row.card {
+  width: 100%;
+  float: left;
+}
+
+
 /* .material-icons{
   
 } */
