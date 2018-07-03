@@ -16,7 +16,6 @@ body {
   flex-direction: column;
 }
 
-
 .card .card-image .card-title {
   color: #fff;
   background-color: #2f4f4f;
@@ -31,8 +30,8 @@ body {
   background-color: #2f4f4f;
 }
 
-.card {
-  width: 15%;
-  float: left;
+.center-cols {
+    float:none; /* disable the float */
+    display: inline-block; /* make blocks inline-block */
+    text-align: initial; /* restore text-align to default */
 }
-

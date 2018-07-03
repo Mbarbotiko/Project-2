@@ -41,5 +41,4 @@ module.exports = function(app){
     app.get("/shwutever", function(req, res){
         res.sendFile(path.join(__dirname, "../public/shwutever.html"));
     });
-
 };
