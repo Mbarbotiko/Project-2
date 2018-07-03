@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <header>  <!--Might be nice to optimize the nav for mobile/add a hamburger button-->
+  <header>
     <ul id="dropdown1" class="dropdown-content">
       <li>
         <a href="apparel.html">Apparel</a>
@@ -60,200 +60,110 @@
               <i class="material-icons right">arrow_drop_down_circle</i>
             </a>
           </li>
-
         </ul>
       </div>
-      <div class="nav-wrapper light-green darken-3">
+      <!-- <div class="nav-wrapper light-green darken-3">
         <form>
           <div class="input-field">
             <input id="search" type="search" required>
-
             <label class="label-icon" for="search">
               <i class="material-icons">search</i>
             </label>
-
             <i class="material-icons">close</i>
           </div>
         </form>
-      </div>
+      </div> -->
     </nav>
 
   </header>
   <br>
   <br>
+  <div class="content">
 
-  <!-- Image Gallery -->
 
-  <div class="container ">
-    <h5>Header Text Here</h5>
+    <br>
+    <br>
 
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    <div class="container ">
+      <h5>Header Text Here</h5>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Confirm Swap</h4>
-      <p>Press OK to Swap, or Cancel to go back</p>
-      <div class="card small">
+
+      <div class="card-items">
+
+      </div>
+
+    </div>
+
+
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h4>Confirm Swap</h4>
+        <p>Press OK to Swap, or Cancel to go back</p>
+        <div class="card small">
           <div class="col s12 m8 offset-m2 l6 offset-l3">
-              <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                  <div class="col s2">
-                    <img src="https://www.cookipedia.co.uk/wiki/images/thumb/7/78/Mustard_and_garlic_mayonnaise_recipe.jpg/300px-Mustard_and_garlic_mayonnaise_recipe.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-                  </div>
-                  <div class="col s10">
-                    <span class="black-text">
-                      This is a square image. Add the "circle" class to it to make it appear circular.
-                    </span>
-                  </div>
+            <div class="card-panel grey lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="https://www.cookipedia.co.uk/wiki/images/thumb/7/78/Mustard_and_garlic_mayonnaise_recipe.jpg/300px-Mustard_and_garlic_mayonnaise_recipe.jpg"
+                    alt="" class="circle responsive-img">
+                  <!-- notice the "circle" class -->
+                </div>
+                <div class="col s10">
+                  <span class="black-text">
+                    This is a square image. Add the "circle" class to it to make it appear circular.
+                  </span>
                 </div>
               </div>
-            </div>        </div>
-    </div>
-    <div class="modal-footer">
-    
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-
-    </div>
-  </div>
-     
-    <div class="row card">
-
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image ">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title ">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green ">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image ">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title ">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green ">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
-          </div>
-        </div>
-      </div>
+      <div class="modal-footer">
 
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="confirm-button">OK</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="cancel-button">Cancel</a>
 
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image ">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title ">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green ">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image ">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title ">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green ">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m6 l4">
-        <div class="card ">
-          <div class="card-image ">
-            <img src="http://static3.grsites.com/archive/textures/misc/misc285.jpg ">
-            <span class="card-title ">Handful of Dice</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light green ">
-              <i class="material-icons ">swap_calls</i>
-            </a>
-          </div>
-          <div class="card-content ">
-            <p>I am hoping to swap this handful of dice for hygiene items.</p>
-          </div>
-        </div>
-      </div>
-
-
-
-    </div>
-
-  </div>
-
-
-
-
-
-
-
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row ">
-        <div class="col l6 s12">
-          <h5 class="right-align">Created by Powerful People</h5>
-          <p class="grey-text text-lighten-4">If I had anything clever to say, this is where I would type it.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="left-align ">Our Team:</h5>
-          <ul>
-            <li>
-              <a class="grey-text text-lighten-3" href="https://github.com/AlBassett ">Al</a>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="https://github.com/prettykatemachine ">Kate</a>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="https://github.com/Sfaunillan ">Stephen</a>
-            </li>
-            <li>
-              <a class="grey-text text-lighten-3" href="https://github.com/Mbarbotiko ">Margarita</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
-    <div class="footer-copyright">
+
+
+    <footer class="page-footer">
       <div class="container">
-        © 2018 Copyright Text
-
+        <div class="row ">
+          <div class="col l6 s12">
+            <h5 class="right-align">Created by Powerful People</h5>
+            <p class="grey-text text-lighten-4">If I had anything clever to say, this is where I would type it.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="left-align ">Our Team:</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://github.com/AlBassett ">Al</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://github.com/prettykatemachine ">Kate</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://github.com/Sfaunillan ">Stephen</a>
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="https://github.com/Mbarbotiko ">Margarita</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2018 Copyright Text
+
+        </div>
+      </div>
+    </footer>
 
 
 
@@ -267,19 +177,19 @@
   $(document).ready(function () {
     $(".dropdown-trigger ").dropdown();
   });
-  
-  $(document).ready(function(){
+
+  $(document).ready(function () {
     $('.modal').modal();
   });
-         
 
-  $("#search").keyup(function (event) {
-    if (event.keyCode === 13) {
-      $("#searchButton").click(function () {
-        alert("Working");
-      })
-    }
-  });
+
+  // $("#search").keyup(function (event) {
+  //   if (event.keyCode === 13) {
+  //     $("#searchButton").click(function () {
+  //       alert("Working");
+  //     })
+  //   }
+  // });
 
 </script>
 
