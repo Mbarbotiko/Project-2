@@ -4,6 +4,7 @@ $( document ).ready(function() {
     var desInput = $("#Description");
     var imageInput = $("#Image")
     var customerForm = $("#customerform");
+    var userId = $("#user");
 
     $(customerForm).on("submit", function(handleSubmit){
         handleSubmit.preventDefault();
@@ -13,6 +14,7 @@ $( document ).ready(function() {
             description: desInput.val().trim(),
             picture: imageInput.val().trim(),
             category: catInput.val().trim(),
+            UserId: userId.val().trim()
         };
 
         $.post("/api/items", newItem)
@@ -41,28 +43,27 @@ $( document ).ready(function() {
         method: 'GET'
     }).then(function(data){
         console.log(data)
+        renderUserList(data);
     });
     
       // A function to get users and then render our list of users
     var userSelect = $("#user");
 
-    function getUser(res, req) {
-        $.get("/api/users", renderUserList);
-        userId = data.id;
-    }
-
     function renderUserList(data) {
         
         var rowsToAdd = [];
 
+        var selectBox = $("#user");
+
         for (var i = 0; i < data.length; i++) {
-          rowsToAdd.push(createUserRow(data[i]));
+          selectBox.append(createUserRow(data[i]));
+          
         }
       };
 
     // Creates the user options in the dropdown
     function createUserRow(user) {
-        
+
         var listOption = $("<option>");
 
         listOption.attr("value", user.id);
