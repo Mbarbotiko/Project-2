@@ -47,11 +47,8 @@ $( document ).ready(function() {
     });
     
       // A function to get users and then render our list of users
-    var userSelect = $("#user");
 
     function renderUserList(data) {
-        
-        var rowsToAdd = [];
 
         var selectBox = $("#user");
 
