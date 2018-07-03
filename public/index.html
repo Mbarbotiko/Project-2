@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <header>
+  <header>  <!--Might be nice to optimize the nav for mobile/add a hamburger button-->
     <ul id="dropdown1" class="dropdown-content">
       <li>
         <a href="apparel.html">Apparel</a>
@@ -69,11 +69,10 @@
             <input id="search" type="search" required>
 
             <label class="label-icon" for="search">
-              <li><a class="waves-effect waves-light btn right">Search<i class="material-icons right">search</i></a></li>
+              <i class="material-icons">search</i>
             </label>
 
             <i class="material-icons">close</i>
-            <a class="waves-effect waves-light btn" id="searchButton">button</a>
           </div>
         </form>
       </div>
@@ -88,6 +87,38 @@
   <div class="container ">
     <h5>Header Text Here</h5>
 
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Confirm Swap</h4>
+      <p>Press OK to Swap, or Cancel to go back</p>
+      <div class="card small">
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+              <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                  <div class="col s2">
+                    <img src="https://www.cookipedia.co.uk/wiki/images/thumb/7/78/Mustard_and_garlic_mayonnaise_recipe.jpg/300px-Mustard_and_garlic_mayonnaise_recipe.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                  </div>
+                  <div class="col s10">
+                    <span class="black-text">
+                      This is a square image. Add the "circle" class to it to make it appear circular.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>        </div>
+    </div>
+    <div class="modal-footer">
+    
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+
+    </div>
+  </div>
+     
     <div class="row card">
 
       <div class="col s12 m6 l4">
@@ -236,6 +267,11 @@
   $(document).ready(function () {
     $(".dropdown-trigger ").dropdown();
   });
+  
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+         
 
   $("#search").keyup(function (event) {
     if (event.keyCode === 13) {
