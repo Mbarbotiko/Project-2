@@ -17,8 +17,14 @@ body {
 }
 
 
-.card-title {
-  background-color: lightslategrey;
+.card .card-image .card-title {
+  color: #fff;
+  background-color: #2f4f4f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 1%;
 }
 
 .page-footer {
