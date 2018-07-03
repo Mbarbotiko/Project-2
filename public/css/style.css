@@ -16,18 +16,22 @@ body {
   flex-direction: column;
 }
 
-.card-title {
-  background-color: lightslategrey;
+.card .card-image .card-title {
+  color: #fff;
+  background-color: #2f4f4f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 1%;
 }
 
 .page-footer {
   background-color: #2f4f4f;
 }
-<<<<<<< HEAD
-=======
-/* 
-.card {
-  width: 15%;
-  float: left;
-} */
->>>>>>> a035a557422281ccab4ac0252ec5759776160aa1
+
+.center-cols {
+    float:none; /* disable the float */
+    display: inline-block; /* make blocks inline-block */
+    text-align: initial; /* restore text-align to default */
+}

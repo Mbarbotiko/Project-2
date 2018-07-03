@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var cardContainer = $(".card-items")
+    var cardContainer = $(".flowRow");
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
@@ -15,12 +15,11 @@ $(document).ready(function () {
                 var allUsersNames = printEverything.User.name;
                 var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printEverything.id}>swap_calls</i></a>`
                 cardContainer.append(
-                    `<div class="row card">` +
-                    `<div class="col s12 m6 l4">` +
-                    `<div class="card">` +
+                    `<div class="col m4">` +
+                    `<div class="card small">` +
                     `<div class="card-image">` +
                     `<img src='${printEverything.picture}' alt='Item Picture'>` +
-                    `<span class="casrd-title">${allItems}</span>` +
+                    `<span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">${allItems}</span>` +
                     `<a class="btn-floating halfway-fab waves-effect waves-light green">` +
                     `<i class="material-icons">swap_calls</i>` +
                     `</a>` +
