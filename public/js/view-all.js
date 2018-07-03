@@ -19,8 +19,7 @@ $(document).ready(function () {
                     `<div class="col s12 m6 l4">` +
                     `<div class="card">` +
                     `<div class="card-image">` +
-                    `<img src='${printEverything.picture}' alt='Item Picture'>` + `<span class="card-title">${allItems}</span>` +//add an  event listener here so in the loop it will listen for a click and gather item information to force into the array we will create. give each item an attribute by going through the response here and making the attribute the ID/Whatever is going to be swapped.  Then use the attribute to either push into array as selected item to swap OR pass as an arugment in a function to swap.
-                    icon +
+                    `<img src='${printEverything.picture}' alt='Item Picture'>` + `<span class="card-title">${allItems}</span>` + icon +
                     `</div>` +
                     `<div class="card-content ">` +
                     `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
@@ -29,14 +28,46 @@ $(document).ready(function () {
                     `</div>`);
             });
 
+                var selectedItems = []
+                function emptyselectedItemsArr() {
+                    selectedItems = [];
+                }
+
+                $(document.body).on('click', '.material-icons', function () {
+                    selectedItems.push($(this).attr('id'));
+                    // $($(this)).css({"background-color":"pink"})//just messing around with showing user that the item is selected, worry about this later after swap function is working.
+                    var itemOne = selectedItems[0];
+                    var itemTwo = selectedItems[1];
+                    console.log("First item chosen ID: " + itemOne);
+                    console.log("Second item chosen ID: " + itemTwo);
+
+                    if (selectedItems.length == 2) {
+                        var wasConfirmed = confirm("Press a button! OK SWAP CANCEL GO BACK AND PICK");
+                        if (wasConfirmed) {
+                            $.ajax({
+                                url: "http://localhost:8080/api/swap",
+                                method: 'POST',
+                                data: {
+                                    itemOne:itemOne,
+                                    itemTwo:itemTwo
+                                }
+                                //put an auto refreshin here
+                            }).then(console.log);
+                        } else {
+                            emptyselectedItemsArr();
+                            console.log(selectedItems);
+                            //also close modal here
+
+                        }
+                    }
+
+
+                });
+        
+
+
+
 
         })
 
-    $(document.body).on('click', '.material-icons', function () {
-        var selectedItem = []
-        selectedItem.push($(this).attr('id'))
-        console.log("Item ID is: "+ selectedItem);
-    })
-   
- 
 });
