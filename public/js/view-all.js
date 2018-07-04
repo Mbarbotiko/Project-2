@@ -106,15 +106,11 @@ $(document).ready(function () {
                         listOption.text(user.name);
                         return listOption;
 
-                        $(document.body).on('click', )
-
                     };
 
-
-                    $('#user').on('click', 'option:selected', function () {
-                        alert("YEAH");
-                        var userSelectedItem = ($(this.attr('value')))
-                        console.log(userSelectedItem);//cant get click or select to work on drop down to get user id attribute to put into ajax call below.
+                    $('#user').on('change', function () {
+                        var userSelectedItem = $(this).val();
+                        console.log(userSelectedItem);
 
 
                         $.ajax({
@@ -122,25 +118,34 @@ $(document).ready(function () {
                             method: 'GET'
                         })
                             .then(function (res) {
-                                res.forEach(function (printUsersStuff) {
+                                console.log(res.Items);
+                                res.forEach(function () {
+
+
                                     var showUsersStuff = $('.card-smallShowMyStuff');
+
                                     var pictureIMG = $("<img>");
-                                    pictureIMG.attr({ "src": printUsersStuff.picture });
-                                    var allImages = pictureIMG;
-                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersStuff.id}>swap_calls</i></a>`
-                                    showUsersStuff.append(
-                                        `<div class="col s12 m6 l4">` +
-                                        `<div class="card">` +
-                                        `<div class="card-image">` +
-                                        `<img src='${printUsersStuff.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersStuff.item}</span>` + icon +
-                                        `</div>` +
-                                        `<div class="card-content ">` +
-                                        `<p>${printUsersStuff.description}</p>` + `<p>Category: ${printUsersStuff.category}<p>` + `<p>Posted by: ${printUsersStuff.name}</p>` +
-                                        `</div>` +
-                                        `</div>` +
-                                        `</div>`);
+                                    pictureIMG.attr({ "src": res.picture });
+                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
+
+
+                                    $(document.body).append(
+                                        `<h1>"HEY!!!!!"</h1>`  
+                                        // `<div class="col s12 m6 l4">` +
+                                        // `<div class="card">` +
+                                        // `<div class="card-image">` +
+                                        // `<img src='${res.Items.picture}' alt='Item Picture'>` + `<span class="card-title">${res.item}</span>` + icon +
+                                        // `</div>` +
+                                        // `<div class="card-content ">` +
+                                        // `<p>${res.Items.description}</p>` + `<p>Category: ${res.Items.category}<p>` + `<p>Posted by: ${res.Itemsname}</p>` +
+                                        // `</div>` +
+                                        // `</div>` +
+                                        // `</div>`);
+                                    );
+
                                 });
-                            })
+                            });
+
 
                     });
 
