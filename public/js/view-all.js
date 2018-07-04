@@ -111,31 +111,28 @@ $(document).ready(function () {
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
                         console.log(userSelectedItem);
-                        var showMyItems = $(".card-smallshowMyItems"); 
+                        var showMyItems = $(".card-smallshowMyItems");
 
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
                         })
-                        
                             .then(function (res) {
-                                
-                                console.log(res);
-                                showUsersSelection.append(`<p>'${res}'</p>`+ `<p>LALALALALA</p>`);
-                                // res.forEach(function (myItems) {
-                                                    
-                             
-                                   
-                                // });
+                                res.Items.forEach(function (printUsersItems) {
+                                    console.log(printUsersItems);
+                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
+
+                                    showUsersSelection.append(`<div class="col s12 m6 l4">` +
+                                        `<div class="card">` +
+                                        `<div class="card-image">` +
+                                        `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
+                                        `</div>`);
+
+                                });
                             });
 
 
                     });
-
-
-                   
-
-
 
 
 
@@ -156,11 +153,11 @@ $(document).ready(function () {
 
                     // }
                 }
-                 
+
 
 
             });
-            
+
 
 
 
