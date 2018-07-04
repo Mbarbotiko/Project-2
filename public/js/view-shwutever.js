@@ -20,7 +20,7 @@ $(document).ready(function () {
                 var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green" item-id=${shwuteverItem.id}><i class="material-icons ">swap_calls</i></a>`;
 
                 cardContainer.append(
-                    `<div class="col s12 m6 l4">` +
+                    `<div class="col m4">` +
                     `<div class="card small">` +
                     `<div class="card-image">` +
                     `<img src='${shwuteverItem.picture}' alt='Item Picture'>` +
