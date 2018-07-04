@@ -111,43 +111,29 @@ $(document).ready(function () {
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
                         console.log(userSelectedItem);
-
+                        var showMyItems = $(".card-smallshowMyItems"); 
 
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
                         })
+                        
                             .then(function (res) {
-                                console.log(res.Items);
-                                res.forEach(function () {
-
-
-                                    var showUsersStuff = $('.card-smallShowMyStuff');
-
-                                    var pictureIMG = $("<img>");
-                                    pictureIMG.attr({ "src": res.picture });
-                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
-
-
-                                    $(document.body).append(
-                                        `<h1>"HEY!!!!!"</h1>`  
-                                        // `<div class="col s12 m6 l4">` +
-                                        // `<div class="card">` +
-                                        // `<div class="card-image">` +
-                                        // `<img src='${res.Items.picture}' alt='Item Picture'>` + `<span class="card-title">${res.item}</span>` + icon +
-                                        // `</div>` +
-                                        // `<div class="card-content ">` +
-                                        // `<p>${res.Items.description}</p>` + `<p>Category: ${res.Items.category}<p>` + `<p>Posted by: ${res.Itemsname}</p>` +
-                                        // `</div>` +
-                                        // `</div>` +
-                                        // `</div>`);
-                                    );
-
-                                });
+                                
+                                console.log(res);
+                                showUsersSelection.append(`<p>'${res}'</p>`+ `<p>LALALALALA</p>`);
+                                // res.forEach(function (myItems) {
+                                                    
+                             
+                                   
+                                // });
                             });
 
 
                     });
+
+
+                   
 
 
 
@@ -170,9 +156,11 @@ $(document).ready(function () {
 
                     // }
                 }
+                 
 
 
             });
+            
 
 
 
