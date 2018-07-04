@@ -89,22 +89,46 @@
         <div class="row">
           <form class="col s10" id="customerform">
             <div class="row">
-              <div class="input-field col s4">
-                <input id="Item" type="text" class="validate">
-                <label for="Item">Item</label>
-              </div>
-              <div class="input-field col s2"></div>
-              <div class="input-field col s4">
-                <select class="browser-default" id="Category">
-                  <option value="" disabled selected>Category</option>
-                  <option value="Apparel">Apparel</option>
-                  <option value="Home/Office">Home/Office</option>
-                  <option value="Lunch">Lunch</option>
-                  <option value="Shwutever">Shwutever</option>
-                  <option value="Spouse">Spouse</option>
-                  <option value="Tech">Tech</option>
-                </select>
-              </div>
+              <form class="col s10" id="customerform">
+                <div class="row">
+                  <div class="input-field col s4">
+                    <input id="Item" type="text" class="validate">
+                    <label for="Item">Item</label>
+                  </div>
+                  <div class="input-field col s2"></div>
+                  <div class="input-field col s4">
+                    <select class="browser-default" id="Category">
+                        <option value="" disabled selected>Category</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Home/Office">Home/Office</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Shwutever">Shwutever</option>
+                        <option value="Spouse">Spouse</option>
+                        <option value="Tech">Tech</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="Description" type="text" class="validate">
+                    <label for="Description">Description of Item</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="Image" type="text" class="validate">
+                    <label for="Image">Image</label>
+                    <button class="btn waves-effect waves-light submit" type="submit">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+                  <div class="input-field col s4">
+                      <select class="browser-default" id="user">
+                          <option value="value" disabled selected>User</option>
+                      </select>
+                  </div>
+                </div>
+              </form>
             </div>
             <div class="row">
               <div class="input-field col s12">
