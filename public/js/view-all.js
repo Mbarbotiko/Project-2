@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('#confirm-button').hide();
-    var cardContainer = $(".card-items")
-    var showUsersSelection = $(".card-smallSelection")
+    var cardContainer = $(".card-items");
+    var showUsersSelection = $(".card-smallSelection");
+    var showMyStuff = $('.card-smallShowMyStuff');
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
@@ -102,7 +103,6 @@ $(document).ready(function () {
 
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
-                        var showMyItems = $(".card-smallshowMyItems");
 
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
