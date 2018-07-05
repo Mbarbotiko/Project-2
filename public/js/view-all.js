@@ -85,6 +85,7 @@ $(document).ready(function () {
                     };
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
+
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
