@@ -56,6 +56,7 @@ module.exports = function (app) {
 
 
   app.post("/api/swap", function (req, res) {
+    console.log(res);
     const { itemOne, itemTwo } = req.body;
     db.sequelize.query(
       `update items a
@@ -66,6 +67,9 @@ module.exports = function (app) {
     )
     .then(() => res.send(200))
     .catch(() => res.send(500));
+    console.log(res)
+    console.log(res);
+    console.log(itemTwo)
   });
 
 };
