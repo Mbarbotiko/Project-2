@@ -16,6 +16,7 @@ $(document).ready(function () {
                 var allCategories = printEverything.category;
                 var allUsersNames = printEverything.User.name;
                 var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printEverything.id}>swap_calls</i></a>`
+                console.log(printEverything.id);
                 cardContainer.append(
                     `<div class="col m4">` +
                     `<div class="card small">` +
@@ -42,6 +43,7 @@ $(document).ready(function () {
             $(document.body).on('click', '.material-icons', function () {
                 //on click of the material icons collect the attributes which are set to the ID of the item set by database.
                 selectedItems.push($(this).attr('id'));
+                console.log(selectedItems);
                 var itemOne = selectedItems[0];
                 var itemTwo = selectedItems[1];
 
