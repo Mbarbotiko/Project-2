@@ -134,6 +134,34 @@ $(document).ready(function () {
 
                     });
 
+                    $(document.body).on('click', '#confirm-button', function(){
+                        $.ajax({
+                                    url: "http://localhost:8080/api/swap",
+                                    method: 'POST',
+                                    data: {
+                                        itemOne:1,
+                                        itemTwo:14
+                                    }
+                                    //put an auto refreshin here
+                                }).then(console.log);
+                        alert("SWAPPED");
+                    })
+
+                    //trouble shooting swap, the variables arent recoginized because they arent in scope fix and roll!
+
+                    // $(document.body).on('click', '#confirm-button', function(){
+                    //     $.ajax({
+                    //                 url: "http://localhost:8080/api/swap",
+                    //                 method: 'POST',
+                    //                 data: {
+                    //                     itemOne:itemOne,
+                    //                     itemTwo:itemTwo
+                    //                 }
+                    //                 //put an auto refreshin here
+                    //             }).then(console.log);
+                    //     alert("SWAPPED");
+                    // })
+
 
 
                     // if (wasConfirmed) {
