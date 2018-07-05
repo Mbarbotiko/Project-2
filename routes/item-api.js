@@ -67,6 +67,7 @@ module.exports = function (app) {
     )
     .then(() => res.send(200))
     .catch(() => res.send(500));
+    console.log(res)
     console.log(res);
     console.log(itemTwo)
   });

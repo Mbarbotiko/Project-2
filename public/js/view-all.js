@@ -1,12 +1,12 @@
 $(document).ready(function () {
-
+    $('#confirm-button').hide();
     var cardContainer = $(".card-items")
     var showUsersSelection = $(".card-smallSelection")
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
         method: 'GET'
-    })
+    })//get all items for page 
         .then(function (res) {
             res.forEach(function (printEverything) {
                 var pictureIMG = $("<img>");
@@ -33,22 +33,21 @@ $(document).ready(function () {
             var selectedItems = []
             function emptyselectedItemsArr() {
                 selectedItems = [];
-            }
+            }//create array to store user clicked items, also a function to clear the array
 
             $(document.body).on('click', '.material-icons', function () {
+                //on click of the material icons collect the attributes which are set to the ID of the item set by database.
                 selectedItems.push($(this).attr('id'));
-                // $($(this)).css({"background-color":"pink"})//just messing around with showing user that the item is selected, worry about this later after swap function is working.
                 var itemOne = selectedItems[0];
                 var itemTwo = selectedItems[1];
-                console.log("First item chosen ID: " + itemOne);
-                console.log("Second item chosen ID: " + itemTwo);
 
                 if (selectedItems.length == 1) {
+                    //open the modal when user selects one item they want
                     $('.modal').modal("open");
                     $.ajax({
                         url: "http://localhost:8080/api/items/" + itemOne,
                         method: 'GET'
-                    })
+                    })//calling the item they chose and printing it to the modal
                         .then(function (res) {
                             showUsersSelection.html(`<div class="col s12 m6 l4">` +
                                 `<div class="card">` +
@@ -62,13 +61,6 @@ $(document).ready(function () {
                                 `</div>`)
 
                         });
-
-                    $(document.body).on('click', '#cancel-button', function () {
-                        $('.modal').modal("close");
-                        emptyselectedItemsArr();
-
-                    })
-
 
 
                     var queryURL = "http://localhost:8080/api/users";
@@ -110,7 +102,6 @@ $(document).ready(function () {
 
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
-                        console.log(userSelectedItem);
                         var showMyItems = $(".card-smallshowMyItems");
 
                         $.ajax({
@@ -119,7 +110,6 @@ $(document).ready(function () {
                         })
                             .then(function (res) {
                                 res.Items.forEach(function (printUsersItems) {
-                                    console.log(printUsersItems);
                                     var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
 
                                     showUsersSelection.append(`<div class="col s12 m6 l4">` +
@@ -134,61 +124,37 @@ $(document).ready(function () {
 
                     });
 
-                    $(document.body).on('click', '#confirm-button', function(){
-                        $.ajax({
-                                    url: "http://localhost:8080/api/swap",
-                                    method: 'POST',
-                                    data: {
-                                        itemOne:1,
-                                        itemTwo:14
-                                    }
-                                    //put an auto refreshin here
-                                }).then(console.log);
-                        alert("SWAPPED");
-                    })
+                }
 
-                    //trouble shooting swap, the variables arent recoginized because they arent in scope fix and roll!
+                $(document.body).on('click', '#cancel-button', function () {
+                    $('.modal').modal("close");
+                    $('#confirm-button').hide();
+                    emptyselectedItemsArr();
+                    showUsersSelection.empty();
+                    userSelect.empty();//clicking cancel on the modal clears the user selection array and closes the modal.
 
-                    // $(document.body).on('click', '#confirm-button', function(){
-                    //     $.ajax({
-                    //                 url: "http://localhost:8080/api/swap",
-                    //                 method: 'POST',
-                    //                 data: {
-                    //                     itemOne:itemOne,
-                    //                     itemTwo:itemTwo
-                    //                 }
-                    //                 //put an auto refreshin here
-                    //             }).then(console.log);
-                    //     alert("SWAPPED");
-                    // })
+                })
 
-
-
-                    // if (wasConfirmed) {
-                    //     $.ajax({
-                    //         url: "http://localhost:8080/api/swap",
-                    //         method: 'POST',
-                    //         data: {
-                    //             itemOne:itemOne,
-                    //             itemTwo:itemTwo
-                    //         }
-                    //         //put an auto refreshin here
-                    //     }).then(console.log);
-                    // } else {
-                    //     emptyselectedItemsArr();
-                    //     console.log(selectedItems);
-                    //     //also close modal here
-
-                    // }
+                if(selectedItems.length===2){
+                    $('#confirm-button').show();
                 }
 
 
+                $(document.body).on('click', '#confirm-button', function () {
+                    $.ajax({
+                        url: "http://localhost:8080/api/swap",
+                        method: 'POST',
+                        data: {
+                            itemOne: itemOne,
+                            itemTwo: itemTwo
+                        }
+                        
+                    }).then(console.log);
 
+                    //add a loading screen here for 5 seconds then do a reload of the page below:
+                    location.reload()
+                })
             });
-
-
-
-
 
 
         })
