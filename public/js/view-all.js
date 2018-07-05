@@ -85,7 +85,6 @@ $(document).ready(function () {
                     };
                     $('#user').on('change', function () {
                         var userSelectedItem = $(this).val();
-
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
@@ -109,7 +108,7 @@ $(document).ready(function () {
                     showUsersSelection.empty();
                     userSelect.empty();//clicking cancel on the modal clears the user selection array and closes the modal.
                 })
-                if (selectedItems.length === 2) {
+                if(selectedItems.length===2){
                     $('#confirm-button').show();
                 }
                 $(document.body).on('click', '#confirm-button', function () {
@@ -120,7 +119,7 @@ $(document).ready(function () {
                             itemOne: itemOne,
                             itemTwo: itemTwo
                         }
-
+                        
                     }).then(console.log);
                     //add a loading screen here for 5 seconds then do a reload of the page below:
                     location.reload()
