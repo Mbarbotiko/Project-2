@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#confirm-button').hide();
-    var cardContainer = $(".card-items");
-    var showUsersSelection = $(".card-smallSelection");
-    var showMyStuff = $('.card-smallShowMyStuff');
+    var cardContainer = $(".card-items")
+    var showUsersSelection = $(".card-smallSelection")
+    var showMyStuff = $('.card-smallShowMyStuff')
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
