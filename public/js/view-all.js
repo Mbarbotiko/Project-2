@@ -16,7 +16,6 @@ $(document).ready(function () {
                 var allCategories = printEverything.category;
                 var allImages = pictureIMG;
                 var allUsersNames = printEverything.User.name;
-                var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printEverything.id}>swap_calls</i></a>`
                 cardContainer.append(
                     `<div class="col s12 m6 l4">` +
                     `<div class="card">` +
