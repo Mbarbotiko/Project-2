@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('#confirm-button').hide();
     var cardContainer = $(".card-items")
     var showUsersSelection = $(".card-smallSelection")
-    var showMyStuff = $('.card-smallShowMyStuff')
+    var showMyStuff = $('.card-smallSelection2')
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
@@ -82,9 +82,13 @@ $(document).ready(function () {
                         listOption.attr("value", user.id);
                         listOption.text(user.name);
                         return listOption;
+                        
                     };
+
                     $('#user').on('change', function () {
+                        howMyStuff.empty();
                         var userSelectedItem = $(this).val();
+                        
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
@@ -92,13 +96,15 @@ $(document).ready(function () {
                             .then(function (res) {
                                 res.Items.forEach(function (printUsersItems) {
                                     var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
-                                    showUsersSelection.append(`<div class="col s12 m6 l4">` +
-                                        `<div class="card">` +
+                                    showMyStuff.append(`<div class=cardinmodal><div class="col s12 m6 l4">` +
+                                        `<div class="card" id="cardinmodal">` +
                                         `<div class="card-image">` +
                                         `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
-                                        `</div>`);
+                                        `</div>`+`</div>`);
                                 });
+                                
                             });
+                            
                     });
                 }
                 $(document.body).on('click', '#cancel-button', function () {
@@ -127,3 +133,5 @@ $(document).ready(function () {
             });
         })
 });
+
+

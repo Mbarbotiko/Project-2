@@ -35,3 +35,47 @@ body {
   float:left;
   margin: 1%;
 }
+
+#modalheader{
+  text-align:center;
+}
+/* 
+.card-smallSelection{
+  width:auto;
+  height:auto;
+  float:left;
+}
+
+
+.card-smallSelection2{
+    width:50%;
+    float:left;
+}
+
+#cardinmodal.card{
+ width:15%;
+}
+
+#cardinmodal .card-image{
+  fill:10%;
+  width:50%;
+ }
+
+ #cardinmodal .card-title{
+  text-align: center;
+  width:100%;
+  
+ }
+
+ #modalform.row.card{
+   width:35%;
+   float:left;
+ }
+ 
+ #modalinput.row{
+   width: 100%;
+ }
+
+ #modalinputform.content{
+   width: 100%;
+ } */
