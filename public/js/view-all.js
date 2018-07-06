@@ -86,7 +86,7 @@ $(document).ready(function () {
                     };
 
                     $('#user').on('change', function () {
-                        howMyStuff.empty();
+                        
                         var userSelectedItem = $(this).val();
                         
                         $.ajax({
@@ -94,16 +94,22 @@ $(document).ready(function () {
                             method: 'GET'
                         })
                             .then(function (res) {
+                                
                                 res.Items.forEach(function (printUsersItems) {
                                     var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
+                                    
                                     showMyStuff.append(`<div class=cardinmodal><div class="col s12 m6 l4">` +
                                         `<div class="card" id="cardinmodal">` +
                                         `<div class="card-image">` +
                                         `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
-                                        `</div>`+`</div>`);
+                                        `</div>`);
                                 });
+
+                                
                                 
                             });
+
+                            showMyStuff.empty();
                             
                     });
                 }
