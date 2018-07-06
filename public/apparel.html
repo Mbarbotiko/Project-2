@@ -51,7 +51,12 @@
             </a>
           </li>
           <li>
-            <a href="post.html">Swap Your Stuff!
+            <a href="NewUser.html">Start An Account
+              <i class="material-icons right">swap_calls</i>
+            </a>
+          </li>
+          <li>
+            <a href="post.html">Add Your Stuff!
               <i class="material-icons right">swap_calls</i>
             </a>
           </li>
@@ -63,70 +68,127 @@
         </ul>
       </div>
     </nav>
+
   </header>
 
   <br>
   <br>
-
   <div class="content">
-
-    <br>
-    <br>
-
     <div class="container ">
-      <h5>Swap Your Apparel!</h5>
       <div class="card-items">
-        <div class="row center-align">
-        </div>
       </div>
     </div>
 
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <div id="modalheader">
+          <h4>Confirm Swap</h4>
+          <p>Press OK to Swap, or Cancel to go back</p>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="confirm-button">OK</a>
+
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="cancel-button">Cancel</a>
+
+          <div id="modaldrop">
+            <div class="row card" id="modalform">
+              <div class="content" id="modalinputform">
+                <div class="row"></div>
+                <form class="col s6" id="customerform">
+                  <div class="row" id="modalinput">
+                    <div class="input-field col s10"></div>
+                    <div class="input-field col s10">
+                      <select class="browser-default" id="user">
+                        <option value="value" disabled selected>User</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="card-smallSelection">
+
+        </div>
+
+        <div id="swapmodalicon">
+          <img src="https://cdn4.iconfinder.com/data/icons/neutro-interface/32/switch-512.png">
+        </div>
+
+
+
+        <div class="card-smallSelection2">
+          <h1> second item selection</h1>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+
+
+
+      </div>
+
+
+    </div>
+
   </div>
+
 
   <footer class="page-footer">
     <div class="container">
       <div class="row ">
         <div class="col l6 s12">
-          <h5 class="left-align">Created by Powerful People</h5>
+          <h5 class="right-align">Created by Powerful People</h5>
           <p class="grey-text text-lighten-4">If I had anything clever to say, this is where I would type it.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="left-align ">Our Team:</h5>
           <ul>
             <li>
-              <i class="material-icons left">star</i>
               <a class="grey-text text-lighten-3" href="https://github.com/AlBassett ">Al</a>
             </li>
             <li>
-              <i class="material-icons left">star</i>
               <a class="grey-text text-lighten-3" href="https://github.com/prettykatemachine ">Kate</a>
             </li>
             <li>
-              <i class="material-icons left">star</i>
               <a class="grey-text text-lighten-3" href="https://github.com/Sfaunillan ">Stephen</a>
             </li>
             <li>
-              <i class="material-icons left">star</i>
               <a class="grey-text text-lighten-3" href="https://github.com/Mbarbotiko ">Margarita</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
     <div class="footer-copyright">
       <div class="container">
         © 2018 Copyright Text
+
       </div>
     </div>
   </footer>
+
+
+
+
+
 </body>
 
-<script src="./js/view-apparel.js" type="text/javascript"></script>
+
+
 <script>
   $(document).ready(function () {
     $(".dropdown-trigger ").dropdown();
   });
+  $(document).ready(function () {
+    $('.modal').modal();
+  });
 </script>
+
+<script src="./js/view-apparel.js" type="text/javascript"></script>
 
 </html>

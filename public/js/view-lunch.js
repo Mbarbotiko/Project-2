@@ -1,5 +1,8 @@
 $(document).ready(function () {
+    $('#confirm-button').hide();
     var cardContainer = $(".card-items")
+    var showUsersSelection = $(".card-smallSelection")
+    var showMyStuff = $('.card-smallSelection2')
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
@@ -8,35 +11,141 @@ $(document).ready(function () {
         .then(function (res) {
 
             res.forEach(function (lunchItem) {
-                var lunchQuery = lunchItem.category;
-                if (lunchQuery==="Lunch"){                
-                var pictureIMG = $("<img>");
-                pictureIMG.attr({ "src": lunchItem.picture });
-                var allItems = lunchItem.item;
-                var allDescriptions = lunchItem.description;
-                var allCategories = lunchItem.category;
-                var allImages = pictureIMG;
-                var allUsersNames = lunchItem.User.name;
-                var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green" item-id=${lunchItem.id}><i class="material-icons ">swap_calls</i></a>`;
+                var lunchItemQuery = lunchItem.category;
+                if (lunchItemQuery === "Lunch") {
+                    var pictureIMG = $("<img>");
+                    pictureIMG.attr({ "src": lunchItem.picture });
+                    var allItems = lunchItem.item;
+                    var allDescriptions = lunchItem.description;
+                    var allCategories = lunchItem.category;
+                    var allImages = pictureIMG;
+                    var allUsersNames = lunchItem.User.name;
+                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${lunchItem.id}>swap_calls</i></a>`
 
-                cardContainer.append(
-                    `<div class="col m4">` +
-                    `<div class="card small">` +
-                    `<div class="card-image">` +
-                    `<img src='${lunchItem.picture}' alt='Item Picture'>` +
-                    `<span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">${allItems}</span>` +icon+
-                    `</div>` +
-                    `<div class="card-content ">` +
-                    `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
-                    `</div>` +
-                    `</div>` +
-                    `</div>`);
+                    cardContainer.append(
+                        `<div class="col s12 m6 l4">` +
+                        `<div class="card">` +
+                        `<div class="card-image">` +
+                        `<img src='${lunchItem.picture}' alt='Item Picture'>` +
+                        `<span class="card-title">${allItems}</span>` + icon +
+                        `</div>` +
+                        `<div class="card-content ">` +
+                        `<p>${allDescriptions}</p>` + `<p>Category: ${allCategories}<p>` + `<p>Posted by: ${allUsersNames}</p>` +
+                        `</div>` +
+                        `</div>` +
+                        `</div>`);
 
                 }
             });
 
 
+            var selectedItems = []
+            console.log(selectedItems);
+            function emptyselectedItemsArr() {
+                selectedItems = [];
+            }//create array to store user clicked items, also a function to clear the array
+            $(document.body).on('click', '.material-icons', function () {
+                //on click of the material icons collect the attributes which are set to the ID of the item set by database.
+                selectedItems.push($(this).attr('id'));
+                console.log(selectedItems);
+                var itemOne = selectedItems[0];
+                var itemTwo = selectedItems[1];
+                if (selectedItems.length == 1) {
+                    console.log(selectedItems);
+                    //open the modal when user selects one item they want
+                    $('.modal').modal("open");
+                    $.ajax({
+                        url: "http://localhost:8080/api/items/" + itemOne,
+                        method: 'GET'
+                    })//calling the item they chose and printing it to the modal
+                        .then(function (res) {
+                            showUsersSelection.html(`<div class="col s12 m6 l4">` +
+                                `<div class="card">` +
+                                `<div class="card-image">` +
+                                `<img src='${res.picture}' alt='Item Picture'>` + `<span class="card-title">${res.item}</span>` +
+                                `</div>` +
+                                `<div class="card-content ">` +
+                                `<p>${res.description}</p>` + `<p>Category: ${res.category}<p>` + `<p>Posted by: ${res.User.name}</p>` +
+                                `</div>` +
+                                `</div>` +
+                                `</div>`)
+                        });
+                    var queryURL = "http://localhost:8080/api/users";
+                    $.ajax({
+                        url: queryURL,
+                        method: 'GET'
+                    }).then(function (data) {
+                        renderUserList(data);
+                    });
+                    // A function to get users and then render our list of users
+                    var userSelect = $("#user");
+                    function renderUserList(data) {
+                        var rowsToAdd = [];
+                        var selectBox = $("#user");
+                        for (var i = 0; i < data.length; i++) {
+                            selectBox.append(createUserRow(data[i]));
+                        }
+                    };
+                    // Creates the user options in the dropdown
+                    function createUserRow(user) {
+                        var listOption = $("<option>");
+                        listOption.attr("value", user.id);
+                        listOption.text(user.name);
+                        return listOption;
+
+                    };
+
+                    $('#user').on('change', function () {
+
+                        var userSelectedItem = $(this).val();
+
+                        $.ajax({
+                            url: "http://localhost:8080/api/users/" + userSelectedItem,
+                            method: 'GET'
+                        })
+                            .then(function (res) {
+
+                                res.Items.forEach(function (printUsersItems) {
+                                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
+
+                                    showMyStuff.append(`<div class=cardinmodal><div class="col s12 m6 l4">` +
+                                        `<div class="card" id="cardinmodal">` +
+                                        `<div class="card-image">` +
+                                        `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
+                                        `</div>`);
+                                });
+
+
+
+                            });
+
+                        showMyStuff.empty();
+
+                    });
+                }
+                $(document.body).on('click', '#cancel-button', function () {
+                    $('.modal').modal("close");
+                    $('#confirm-button').hide();
+                    emptyselectedItemsArr();
+                    showUsersSelection.empty();
+                    userSelect.empty();//clicking cancel on the modal clears the user selection array and closes the modal.
+                })
+                if (selectedItems.length === 2) {
+                    $('#confirm-button').show();
+                }
+                $(document.body).on('click', '#confirm-button', function () {
+                    $.ajax({
+                        url: "http://localhost:8080/api/swap",
+                        method: 'POST',
+                        data: {
+                            itemOne: itemOne,
+                            itemTwo: itemTwo
+                        }
+
+                    }).then(console.log);
+                    //add a loading screen here for 5 seconds then do a reload of the page below:
+                    location.reload()
+                })
+            });
         })
-
-
 });

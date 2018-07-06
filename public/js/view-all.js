@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('#confirm-button').hide();
     var cardContainer = $(".card-items")
     var showUsersSelection = $(".card-smallSelection")
-    var showMyStuff = $('.card-smallShowMyStuff')
+    var showMyStuff = $('.card-smallSelection2')
     var queryURL = "http://localhost:8080/api/items";
     $.ajax({
         url: queryURL,
@@ -72,8 +72,6 @@ $(document).ready(function () {
                         var selectBox = $("#user");
                         for (var i = 0; i < data.length; i++) {
                             selectBox.append(createUserRow(data[i]));
-                            // oncancel this needs to be cleared its appending over and over again to the list.
-                            //   https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
                         }
                     };
                     // Creates the user options in the dropdown
@@ -82,23 +80,35 @@ $(document).ready(function () {
                         listOption.attr("value", user.id);
                         listOption.text(user.name);
                         return listOption;
+                        
                     };
+
                     $('#user').on('change', function () {
+                        
                         var userSelectedItem = $(this).val();
+                        
                         $.ajax({
                             url: "http://localhost:8080/api/users/" + userSelectedItem,
                             method: 'GET'
                         })
                             .then(function (res) {
+                                
                                 res.Items.forEach(function (printUsersItems) {
                                     var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
-                                    showUsersSelection.append(`<div class="col s12 m6 l4">` +
-                                        `<div class="card">` +
+                                    
+                                    showMyStuff.append(`<div class=cardinmodal><div class="col s12 m6 l4">` +
+                                        `<div class="card" id="cardinmodal">` +
                                         `<div class="card-image">` +
                                         `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
                                         `</div>`);
                                 });
+
+                                
+                                
                             });
+
+                            showMyStuff.empty();
+                            
                     });
                 }
                 $(document.body).on('click', '#cancel-button', function () {
@@ -127,3 +137,5 @@ $(document).ready(function () {
             });
         })
 });
+
+
