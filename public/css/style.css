@@ -39,43 +39,27 @@ body {
 #modalheader{
   text-align:center;
 }
-/* 
+
 .card-smallSelection{
-  width:auto;
-  height:auto;
+  width:40%;
   float:left;
 }
 
-
 .card-smallSelection2{
-    width:50%;
-    float:left;
+  width:60%;
+  float:left;
 }
 
-#cardinmodal.card{
- width:15%;
+#swapmodalicon{
+  width: 20%;
+  float:left;
 }
 
-#cardinmodal .card-image{
-  fill:10%;
-  width:50%;
- }
+#swapmodalicon img{
+  width:20%;
+}
 
- #cardinmodal .card-title{
-  text-align: center;
+#modaldrop{
   width:100%;
-  
- }
-
- #modalform.row.card{
-   width:35%;
-   float:left;
- }
- 
- #modalinput.row{
-   width: 100%;
- }
-
- #modalinputform.content{
-   width: 100%;
- } */
+  float: left;
+}
