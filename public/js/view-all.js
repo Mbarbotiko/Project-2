@@ -72,8 +72,6 @@ $(document).ready(function () {
                         var selectBox = $("#user");
                         for (var i = 0; i < data.length; i++) {
                             selectBox.append(createUserRow(data[i]));
-                            // oncancel this needs to be cleared its appending over and over again to the list.
-                            //   https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
                         }
                     };
                     // Creates the user options in the dropdown
