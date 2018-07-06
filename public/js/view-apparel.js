@@ -144,7 +144,8 @@ $(document).ready(function () {
 
                     }).then(console.log);
                     //add a loading screen here for 5 seconds then do a reload of the page below:
-                    location.reload()
+                    // location.reload()
+                    window.location = "http://localhost:8080/index.html";
                 })
             });
         })
