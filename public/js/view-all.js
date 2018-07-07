@@ -104,6 +104,7 @@ $(document).ready(function () {
                                         `</div>`
                                         +`</div>`);
                                 });
+                                
 
                                 
                                 
@@ -112,13 +113,15 @@ $(document).ready(function () {
                             showMyStuff.empty();
                             
                     });
+                    
                 }
                 $(document.body).on('click', '#cancel-button', function () {
                     $('.modal').modal("close");
                     $('#confirm-button').hide();
                     emptyselectedItemsArr();
                     showUsersSelection.empty();
-                    userSelect.empty();//clicking cancel on the modal clears the user selection array and closes the modal.
+                    userSelect.empty();
+                    showMyStuff.empty();//clicking cancel on the modal clears the user selection array and closes the modal.
                 })
                 if(selectedItems.length===2){
                     $('#confirm-button').show();

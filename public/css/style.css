@@ -47,7 +47,24 @@ main {
   width:15%;
   float:left;
   margin: 1%;
+  min-height: 400px;
+  
 }
+.card img{
+  min-height: 150px;
+  width:auto;
+  
+}
+
+#modalform.card{
+  min-height: auto;
+  width:700px;
+  margin-left:-250px;
+  /* background-color:rgb(56, 164, 56); */
+  padding-left:100px;
+  padding-top:0px;
+}
+
 
 #modalheader{
   text-align:center;
@@ -56,6 +73,7 @@ main {
 .card-smallSelection{
   width:20%;
   float:left;
+  
 }
 
 .card-smallSelection2{
@@ -67,12 +85,14 @@ width:60%;
   float:left;
   margin: 1%;
   margin-left:15%;
+  min-height: 300px;
 }
 
 #inner-card2.card{
   width:15%;
   float:left;
   margin: 1%;
+  min-height: 200px;
 }
 
 #swapmodalicon{
