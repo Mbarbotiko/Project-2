@@ -71,70 +71,70 @@
 
   </header>
 
-  <br>
-  <br>
-
-  <div class="container">
+  <main>
     <br>
-    <h5>POST ITEM</h5>
 
-    <div class="row">
-      <div class="content" id="customerform">
-        <div class="row">
-          <form class="col s10" id="customerform">
-            <div class="row">
-              <form class="col s10" id="customerform">
-                <div class="row">
-                  <div class="input-field col s4">
-                    <input id="Item" type="text" class="validate">
-                    <label for="Item">Item</label>
+    <div class="container">
+      <br>
+      <h5>POST ITEM</h5>
+
+      <div class="row">
+        <div class="content" id="customerform">
+          <div class="row">
+            <form class="col s10" id="customerform">
+              <div class="row">
+                <form class="col s10" id="customerform">
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="Item" type="text" class="validate">
+                      <label for="Item">Item</label>
+                    </div>
+                    <div class="input-field col s2"></div>
+                    <div class="input-field col s4">
+                      <select class="browser-default" id="Category">
+                        <option value="" disabled selected>Category</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Home/Office">Home/Office</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Shwutever">Shwutever</option>
+                        <option value="Spouse">Spouse</option>
+                        <option value="Tech">Tech</option>
+                      </select>
+                    </div>
                   </div>
-                  <div class="input-field col s2"></div>
-                  <div class="input-field col s4">
-                    <select class="browser-default" id="Category">
-                      <option value="" disabled selected>Category</option>
-                      <option value="Apparel">Apparel</option>
-                      <option value="Home/Office">Home/Office</option>
-                      <option value="Lunch">Lunch</option>
-                      <option value="Shwutever">Shwutever</option>
-                      <option value="Spouse">Spouse</option>
-                      <option value="Tech">Tech</option>
-                    </select>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="Description" type="text" class="validate">
+                      <label for="Description">Description (Write a short description of the item you're posting)</label>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="Description" type="text" class="validate">
-                    <label for="Description">Description (Write a short description of the item you're posting)</label>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="Image" type="text" class="validate">
+                      <label for="Image">Image</label>
+                      <button class="btn waves-effect waves-light submit" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>
+                    <div class="input-field col s4">
+                      <select class="browser-default" id="user">
+                        <option value="value" disabled selected>User</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="Image" type="text" class="validate">
-                    <label for="Image">Image</label>
-                    <button class="btn waves-effect waves-light submit" type="submit">Submit
-                      <i class="material-icons right">send</i>
-                    </button>
-                  </div>
-                  <div class="input-field col s4">
-                    <select class="browser-default" id="user">
-                      <option value="value" disabled selected>User</option>
-                    </select>
-                  </div>
-                </div>
-              </form>
-            </div>
+                </form>
+              </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </main>
   <footer class="page-footer ">
     <div class="container ">
       <div class="row ">
         <div class="col l6 s12 ">
           <h5 class="right-align ">Created by Powerful People</h5>
-          <p class="grey-text text-lighten-4 ">If I had anything clever to say, this is where I would type it.</p>
+          <p class="grey-text text-lighten-4 right-align">This website was created with much laughter.</p>
         </div>
         <div class="col l4 offset-l2 s12 ">
           <h5 class="left-align ">Our Team:</h5>
@@ -170,10 +170,10 @@
       $(".dropdown-trigger ").dropdown();
     });
     $(document).ready(function () {
-    $('.modal').modal({
-      dismissible: false
+      $('.modal').modal({
+        dismissible: false
+      });
     });
-  });
   </script>
 </body>
 

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "pw",
+    "password": "root",
     "database": "swaps_db",
     "host": "127.0.0.1",
     "port": 3305,
