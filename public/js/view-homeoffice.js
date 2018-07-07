@@ -9,24 +9,25 @@ $(document).ready(function () {
         method: 'GET'
     })
         .then(function (res) {
+            console.log(res)
 
-            res.forEach(function (homeOfficeitem) {
-                var homeOfficeQuery = homeOfficeitem.category;
-                if (homeOfficeQuery === "Home Office") {
+            res.forEach(function (homeOfficeitems) {
+                var homeOfficeQuery = homeOfficeitems.category;
+                if (homeOfficeQuery === "Home/Office") {
                     var pictureIMG = $("<img>");
-                    pictureIMG.attr({ "src": homeOfficeitem.picture });
-                    var allItems = homeOfficeitem.item;
-                    var allDescriptions = homeOfficeitem.description;
-                    var allCategories = homeOfficeitem.category;
+                    pictureIMG.attr({ "src": homeOfficeitems.picture });
+                    var allItems = homeOfficeitems.item;
+                    var allDescriptions = homeOfficeitems.description;
+                    var allCategories = homeOfficeitems.category;
                     var allImages = pictureIMG;
-                    var allUsersNames = homeOfficeitem.User.name;
-                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${homeOfficeitem.id}>swap_calls</i></a>`
+                    var allUsersNames = homeOfficeitems.User.name;
+                    var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${homeOfficeitems.id}>swap_calls</i></a>`
 
                     cardContainer.append(
                         `<div class="col s12 m6 l4">` +
                         `<div class="card">` +
                         `<div class="card-image">` +
-                        `<img src='${homeOfficeitem.picture}' alt='Item Picture'>` +
+                        `<img src='${homeOfficeitems.picture}' alt='Item Picture'>` +
                         `<span class="card-title">${allItems}</span>` + icon +
                         `</div>` +
                         `<div class="card-content ">` +
@@ -60,8 +61,9 @@ $(document).ready(function () {
                     })//calling the item they chose and printing it to the modal
                         .then(function (res) {
                             showUsersSelection.html(`<div class="col s12 m6 l4">` +
-                                `<div class="card">` +
-                                `<div class="card-image">` +
+                            `<div class="card" id="inner-card">` 
+                            +
+                                `<div class="card-image">`+
                                 `<img src='${res.picture}' alt='Item Picture'>` + `<span class="card-title">${res.item}</span>` +
                                 `</div>` +
                                 `<div class="card-content ">` +
@@ -108,9 +110,9 @@ $(document).ready(function () {
                                 res.Items.forEach(function (printUsersItems) {
                                     var icon = `<a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons" id=${printUsersItems.id}>swap_calls</i></a>`
 
-                                    showMyStuff.append(`<div class=cardinmodal><div class="col s12 m6 l4">` +
-                                        `<div class="card" id="cardinmodal">` +
-                                        `<div class="card-image">` +
+                                    showMyStuff.append(`<div class="col s12 m6 l4">` +
+                                    `<div class="card" id="inner-card2">` +
+                                    `<div class="card-image">` +
                                         `<img src='${printUsersItems.picture}' alt='Item Picture'>` + `<span class="card-title">${printUsersItems.item}</span>` + icon +
                                         `</div>`);
                                 });
