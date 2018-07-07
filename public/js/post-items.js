@@ -37,7 +37,7 @@ $( document ).ready(function() {
 
     //Selecting the user in the drop down for item posting.
 
-    var queryURL = "http://localhost:8080/api/users";
+    var queryURL = "/api/users";
     $.ajax({
         url: queryURL,
         method: 'GET'

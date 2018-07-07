@@ -3,7 +3,7 @@ $(document).ready(function () {
     var cardContainer = $(".card-items")
     var showUsersSelection = $(".card-smallSelection")
     var showMyStuff = $('.card-smallSelection2')
-    var queryURL = "http://localhost:8080/api/items";
+    var queryURL = "/api/items";
     $.ajax({
         url: queryURL,
         method: 'GET'
@@ -43,7 +43,7 @@ $(document).ready(function () {
                     //open the modal when user selects one item they want
                     $('.modal').modal("open");
                     $.ajax({
-                        url: "http://localhost:8080/api/items/" + itemOne,
+                        url: "/api/items/" + itemOne,
                         method: 'GET'
                     })//calling the item they chose and printing it to the modal
                         .then(function (res) {
@@ -59,7 +59,7 @@ $(document).ready(function () {
                                 `</div>` +
                                 `</div>`)
                         });
-                    var queryURL = "http://localhost:8080/api/users";
+                    var queryURL = "/api/users";
                     $.ajax({
                         url: queryURL,
                         method: 'GET'
@@ -89,7 +89,7 @@ $(document).ready(function () {
                         var userSelectedItem = $(this).val();
                         
                         $.ajax({
-                            url: "http://localhost:8080/api/users/" + userSelectedItem,
+                            url: "/api/users/" + userSelectedItem,
                             method: 'GET'
                         })
                             .then(function (res) {
@@ -125,7 +125,7 @@ $(document).ready(function () {
                 }
                 $(document.body).on('click', '#confirm-button', function () {
                     $.ajax({
-                        url: "http://localhost:8080/api/swap",
+                        url: "/api/swap",
                         method: 'POST',
                         data: {
                             itemOne: itemOne,
@@ -135,7 +135,7 @@ $(document).ready(function () {
                     }).then(console.log);
                     //add a loading screen here for 5 seconds then do a reload of the page below:
                     // location.reload()
-                    window.location = "http://localhost:8080/index.html";
+                    window.location = "/index.html";
                 })
             });
         })
