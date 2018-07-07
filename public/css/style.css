@@ -48,6 +48,7 @@ main {
   float:left;
   margin: 1%;
   min-height: 400px;
+  min-width: 125px;
   
 }
 .card img{
