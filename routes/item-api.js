@@ -59,8 +59,8 @@ module.exports = function (app) {
     console.log(res);
     const { itemOne, itemTwo } = req.body;
     db.sequelize.query(
-      `update items a
-      inner join items b on a.id <> b.id
+      `update Items a
+      inner join Items b on a.id <> b.id
         set a.UserId = b.UserId
       where a.id in (:idA,:idB) and b.id in (:idA,:idB)`,
       { replacements: { idA: itemOne, idB: itemTwo } }
